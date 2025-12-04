@@ -3,16 +3,14 @@ const SectionTitle = () => {
     <section className="bg-yellow-light py-16 px-[120px]">
       <div className="text-center mb-12">
         <h2 className="font-anton text-5xl leading-[120%] text-foreground">
-          Hi this is a section title
+          The Toolkit Top Creators Rely On
         </h2>
       </div>
       
       <div className="max-w-4xl mx-auto">
         <p className="font-inter text-base text-muted-foreground text-center leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore 
-          et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-          aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-          cillum dolore eu fugiat nulla pariatur.
+          Tens of thousands of creators worldwide use these tools for thumbnails, short-form editing, 
+          cross-platform adaptation, and subtitle translation—simple to use, professional results.
         </p>
       </div>
 
