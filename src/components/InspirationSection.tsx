@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ChevronsRight } from "lucide-react";
 import featureImage1 from "@/assets/feature-image-1.png";
 
@@ -5,24 +6,29 @@ interface ToolItemProps {
   title: string;
   description: string;
   link: string;
+  isExpanded: boolean;
+  onHover: () => void;
 }
 
-const ToolItem = ({ title, description, link }: ToolItemProps) => {
+const ToolItem = ({ title, description, link, isExpanded, onHover }: ToolItemProps) => {
   return (
-    <div className="group border-t border-foreground/10 py-4">
+    <div 
+      className="border-t border-foreground/10 py-4"
+      onMouseEnter={onHover}
+    >
       <a 
         href={link}
         target="_blank"
         rel="noopener noreferrer"
         className="block"
       >
-        {/* Collapsed state - just title */}
-        <h3 className="font-jetbrains font-bold text-base uppercase tracking-[0.15em] text-foreground group-hover:mb-3 transition-all">
+        {/* Title */}
+        <h3 className={`font-jetbrains font-bold text-base uppercase tracking-[0.15em] text-foreground transition-all ${isExpanded ? 'mb-3' : ''}`}>
           {title}
         </h3>
         
-        {/* Expanded state on hover */}
-        <div className="max-h-0 overflow-hidden group-hover:max-h-[200px] transition-all duration-300">
+        {/* Expanded content */}
+        <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-[200px]' : 'max-h-0'}`}>
           <p className="font-inter text-sm text-foreground/70 mb-4">
             {description}
           </p>
@@ -37,6 +43,8 @@ const ToolItem = ({ title, description, link }: ToolItemProps) => {
 };
 
 const InspirationSection = () => {
+  const [expandedIndex, setExpandedIndex] = useState(0); // First tab expanded by default
+
   const tools = [
     {
       title: "Illustrate Mind Spark 2",
@@ -58,32 +66,32 @@ const InspirationSection = () => {
           When inspiration strikes—<br />create instantly
         </h2>
         
-        {/* Content row: Tabs on left, Image on right */}
-        <div className="flex gap-[60px] items-start">
+        {/* Blue container with tabs and image */}
+        <div className="bg-lavender/50 rounded-lg p-6 relative flex gap-8 items-start">
+          {/* Decorative arrows */}
+          <div className="absolute top-4 right-[320px] flex">
+            <ChevronsRight className="w-6 h-6 text-cyan rotate-180" />
+            <ChevronsRight className="w-6 h-6 text-cyan rotate-180 -ml-2" />
+            <ChevronsRight className="w-6 h-6 text-cyan rotate-180 -ml-2" />
+          </div>
+          
           {/* Left: Tools list */}
-          <div className="flex-1 max-w-[500px]">
-            <div className="bg-lavender/40 rounded-lg p-6 relative">
-              {/* Decorative arrows */}
-              <div className="absolute -top-2 right-8 flex">
-                <ChevronsRight className="w-6 h-6 text-cyan rotate-180" />
-                <ChevronsRight className="w-6 h-6 text-cyan rotate-180 -ml-2" />
-                <ChevronsRight className="w-6 h-6 text-cyan rotate-180 -ml-2" />
-              </div>
-              
-              {tools.map((tool, index) => (
-                <ToolItem 
-                  key={index}
-                  title={tool.title}
-                  description={tool.description}
-                  link={tool.link}
-                />
-              ))}
-            </div>
+          <div className="flex-1">
+            {tools.map((tool, index) => (
+              <ToolItem 
+                key={index}
+                title={tool.title}
+                description={tool.description}
+                link={tool.link}
+                isExpanded={expandedIndex === index}
+                onHover={() => setExpandedIndex(index)}
+              />
+            ))}
           </div>
 
           {/* Right: Image */}
           <div className="relative shrink-0">
-            <div className="w-[420px] h-[340px] rounded-lg border-2 border-cyan/30 overflow-hidden bg-cyan/10">
+            <div className="w-[320px] h-[260px] rounded-lg border-2 border-cyan/30 overflow-hidden bg-cyan/10">
               <img 
                 src={featureImage1} 
                 alt="AI Creative Tool"
@@ -91,7 +99,7 @@ const InspirationSection = () => {
               />
             </div>
             {/* Bottom decorative pixels */}
-            <div className="absolute -bottom-6 -right-6 flex gap-[2px]">
+            <div className="absolute -bottom-4 -right-4 flex gap-[2px]">
               {[...Array(4)].map((_, row) => (
                 <div key={row} className="flex flex-col gap-[2px]">
                   {[...Array(4)].map((_, col) => (
