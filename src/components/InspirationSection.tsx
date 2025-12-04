@@ -59,8 +59,8 @@ const InspirationSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
-      <div className="max-w-[1100px] mx-auto px-[60px]">
+    <section className="py-20 bg-background">
+      <div className="px-[60px]">
         {/* Main Title - Above everything */}
         <h2 className="font-anton text-[64px] leading-[110%] text-foreground mb-10">
           When inspiration strikes—<br />create instantly
