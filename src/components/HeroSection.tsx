@@ -1,7 +1,21 @@
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-image.webp";
+import { useState, useEffect } from "react";
+import heroImage1 from "@/assets/hero-image.webp";
+import heroImage2 from "@/assets/hero-carousel-2.webp";
+import heroImage3 from "@/assets/hero-carousel-3.webp";
+
+const carouselImages = [heroImage1, heroImage2, heroImage3];
 
 const HeroSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % carouselImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="px-[60px] pt-20 pb-[60px] flex items-center justify-center gap-[80px]">
       <div className="flex flex-col gap-6 max-w-[580px]">
@@ -47,16 +61,27 @@ const HeroSection = () => {
           className="rounded border-2 border-card w-[560px] h-[315px] overflow-hidden relative"
           style={{ boxShadow: "0px 2px 12px 0px rgba(0, 0, 0, 0.12)" }}
         >
-          <img 
-            src={heroImage} 
-            alt="AI Creation Platform"
-            className="w-full h-full object-cover"
-          />
+          {carouselImages.map((img, index) => (
+            <img 
+              key={index}
+              src={img} 
+              alt={`AI Creation Platform ${index + 1}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                index === currentIndex ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
         </div>
         <div className="flex gap-1">
-          <div className="w-10 h-1.5 bg-lavender rounded-sm" />
-          <div className="w-10 h-1.5 bg-stone-dark rounded-sm" />
-          <div className="w-10 h-1.5 bg-stone-dark rounded-sm" />
+          {carouselImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-10 h-1.5 rounded-sm transition-colors ${
+                index === currentIndex ? "bg-lavender" : "bg-stone-dark"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>
