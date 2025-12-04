@@ -6,8 +6,8 @@ const FeaturesGrid = () => {
       title: "Out of content ideas?",
       description: "How can I turn a vague thought into a full post — in seconds?",
       cards: [
-        { title: "Turn Idea to Visual", hasButton: true },
-        { title: "Write Copy", hasButton: true },
+        { title: "Turn Idea to Visual", hasButton: true, link: "https://mulerun.com/@Rhino/illustrate-mind-spark-2" },
+        { title: "Write Copy", hasButton: true, link: "https://mulerun.com/@cqplaquemh41i2k/content-pilot-ai" },
       ],
       layout: "right",
     },
@@ -15,10 +15,10 @@ const FeaturesGrid = () => {
       title: "Creating content takes forever?",
       description: "How can I auto-generate videos, podcasts, and subtitles — without filming or editing?",
       cards: [
-        { title: "Make Shorts", hasButton: false },
-        { title: "Generate Podcast", hasButton: false },
-        { title: "Translate Subtitles", hasButton: false },
-        { title: "Translate Subtitles", hasButton: false },
+        { title: "Make Shorts", hasButton: false, link: undefined },
+        { title: "Generate Podcast", hasButton: false, link: undefined },
+        { title: "Translate Subtitles", hasButton: false, link: undefined },
+        { title: "Translate Subtitles", hasButton: false, link: undefined },
       ],
       layout: "left",
     },
@@ -26,8 +26,8 @@ const FeaturesGrid = () => {
       title: "Great content, but no clicks?",
       description: "How can I get scroll-stopping titles and thumbnails — that actually convert?",
       cards: [
-        { title: "Generate Title", hasButton: false },
-        { title: "Create Thumbnail", hasButton: false },
+        { title: "Generate Title", hasButton: false, link: undefined },
+        { title: "Create Thumbnail", hasButton: false, link: undefined },
       ],
       layout: "right",
     },
@@ -35,8 +35,8 @@ const FeaturesGrid = () => {
       title: "Posting to just one platform?",
       description: "How can I repurpose one video into posts for all social platforms — instantly?",
       cards: [
-        { title: "Repurpose Content", hasButton: false },
-        { title: "Auto Post", hasButton: false },
+        { title: "Repurpose Content", hasButton: false, link: undefined },
+        { title: "Auto Post", hasButton: false, link: undefined },
       ],
       layout: "left",
     },
@@ -85,6 +85,7 @@ const FeaturesGrid = () => {
                     key={cardIndex} 
                     title={card.title} 
                     hasButton={card.hasButton}
+                    link={card.link}
                     imageIndex={sectionIndex * 2 + cardIndex}
                   />
                 ))}

@@ -6,14 +6,19 @@ interface FeatureCardProps {
   title: string;
   hasButton?: boolean;
   imageIndex?: number;
+  link?: string;
 }
 
 const images = [cardImage1, cardImage2];
 
-const FeatureCard = ({ title, hasButton = false, imageIndex = 0 }: FeatureCardProps) => {
+const FeatureCard = ({ title, hasButton = false, imageIndex = 0, link }: FeatureCardProps) => {
+  const CardWrapper = link ? 'a' : 'div';
+  const cardProps = link ? { href: link, target: "_blank", rel: "noopener noreferrer" } : {};
+
   return (
-    <div 
-      className="bg-card rounded border border-yellow-glow pt-8 pr-6 pb-8 pl-6 flex items-center w-[357px] h-[130px] relative overflow-hidden card-shadow-yellow group"
+    <CardWrapper 
+      {...cardProps}
+      className={`bg-card rounded border border-yellow-glow pt-8 pr-6 pb-8 pl-6 flex items-center w-[357px] h-[130px] relative overflow-hidden card-shadow-yellow group ${link ? 'cursor-pointer hover:border-yellow-bright transition-colors' : ''}`}
     >
       {/* Browser Frame with Image */}
       <div 
@@ -48,7 +53,7 @@ const FeatureCard = ({ title, hasButton = false, imageIndex = 0 }: FeatureCardPr
           <ArrowRight className="w-5 h-5 text-accent-foreground" />
         </div>
       )}
-    </div>
+    </CardWrapper>
   );
 };
 
