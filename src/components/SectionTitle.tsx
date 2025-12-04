@@ -45,14 +45,14 @@ const ScrollingColumn = ({ images, direction }: { images: string[]; direction: "
   return (
     <div 
       ref={scrollRef}
-      className="flex flex-col gap-4 h-[500px] overflow-hidden"
+      className="flex flex-col gap-3 h-[400px] overflow-hidden"
     >
       {[...images, ...images].map((img, i) => (
         <img 
           key={i} 
           src={img} 
           alt={`User story ${i + 1}`}
-          className="w-full rounded-lg flex-shrink-0"
+          className="w-full max-w-[280px] mx-auto rounded-lg flex-shrink-0"
         />
       ))}
     </div>
