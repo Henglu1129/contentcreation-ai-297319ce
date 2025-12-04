@@ -142,7 +142,7 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
             return (
               <div 
                 key={index}
-                className="py-4 border-t border-foreground/10 cursor-pointer"
+                className={`py-4 border-t border-foreground/10 cursor-pointer ${isReversed ? 'text-right' : ''}`}
                 onMouseEnter={() => setExpandedIndex(index)}
               >
                 <h3 className="font-jetbrains font-bold text-lg uppercase tracking-wide text-foreground">
