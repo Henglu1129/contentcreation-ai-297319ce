@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-portrait.png";
 const HeroSection = () => {
   return (
     <section className="px-[60px] pt-20 pb-[60px] flex items-center justify-center gap-[80px]">
-      <div className="flex flex-col gap-6 flex-1">
+      <div className="flex flex-col gap-6 max-w-[580px]">
         <div className="flex flex-col items-start">
           <div className="pl-3 pr-3" style={{ transform: "rotate(2deg)" }}>
             <div className="bg-yellow-bright p-1">
