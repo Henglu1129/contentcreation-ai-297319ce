@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronsRight } from "lucide-react";
+// Updated image for Illustrate tab
 import illustrateCase from "@/assets/illustrate-case.webp";
 
 interface Tool {
