@@ -15,9 +15,14 @@ const Header = () => {
 
         {/* Nav Links */}
         <nav className="flex items-center gap-7">
-          <button className="font-jetbrains font-bold text-sm uppercase tracking-tight text-foreground/80 hover:text-foreground transition-colors">
+          <a 
+            href="https://mulerun.com/agent-store" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="font-jetbrains font-bold text-sm uppercase tracking-tight text-foreground/80 hover:text-foreground transition-colors"
+          >
             Agent Store
-          </button>
+          </a>
           <button className="font-jetbrains font-bold text-sm uppercase tracking-tight text-foreground/80 hover:text-foreground transition-colors">
             Ambassadors
           </button>
