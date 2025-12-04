@@ -1,76 +1,49 @@
 import { Linkedin, Youtube } from "lucide-react";
-import { useEffect, useState, useRef } from "react";
-
-interface Star {
-  id: number;
-  x: number;
-  y: number;
-  size: number;
-  opacity: number;
-  speedX: number;
-  speedY: number;
-}
 
 const Footer = () => {
-  const [stars, setStars] = useState<Star[]>([]);
-  const animationRef = useRef<number>();
-
-  useEffect(() => {
-    const generatedStars = [...Array(150)].map((_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() > 0.7 ? 3 : Math.random() > 0.5 ? 2 : 1,
-      opacity: Math.random() * 0.8 + 0.2,
-      speedX: (Math.random() - 0.5) * 0.02,
-      speedY: (Math.random() - 0.5) * 0.02,
-    }));
-    setStars(generatedStars);
-  }, []);
-
-  useEffect(() => {
-    const animate = () => {
-      setStars(prevStars => 
-        prevStars.map(star => {
-          let newX = star.x + star.speedX;
-          let newY = star.y + star.speedY;
-          
-          // Wrap around edges
-          if (newX > 100) newX = 0;
-          if (newX < 0) newX = 100;
-          if (newY > 100) newY = 0;
-          if (newY < 0) newY = 100;
-          
-          return { ...star, x: newX, y: newY };
-        })
-      );
-      animationRef.current = requestAnimationFrame(animate);
-    };
-
-    animationRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, []);
+  // Generate stars with random positions and animation properties
+  const stars = [...Array(150)].map((_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    size: Math.random() > 0.7 ? 3 : Math.random() > 0.5 ? 2 : 1,
+    opacity: Math.random() * 0.8 + 0.2,
+    twinkleDuration: Math.random() * 3 + 1,
+    twinkleDelay: Math.random() * 3,
+    floatDuration: Math.random() * 20 + 15,
+    floatDelay: Math.random() * 5,
+  }));
 
   return (
     <footer className="bg-foreground py-20 px-[120px] relative overflow-hidden">
+      {/* CSS for star animations */}
+      <style>{`
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.2; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.3); }
+        }
+        @keyframes float {
+          0% { transform: translate(0, 0); }
+          25% { transform: translate(10px, -10px); }
+          50% { transform: translate(20px, 0); }
+          75% { transform: translate(10px, 10px); }
+          100% { transform: translate(0, 0); }
+        }
+      `}</style>
+
       {/* Animated floating stars background */}
       <div className="absolute inset-0 overflow-hidden">
         {stars.map((star) => (
           <div
             key={star.id}
-            className="absolute bg-card rounded-full"
+            className="absolute bg-white rounded-full"
             style={{
               width: `${star.size}px`,
               height: `${star.size}px`,
               left: `${star.x}%`,
               top: `${star.y}%`,
-              opacity: star.opacity,
-              boxShadow: star.size > 2 ? '0 0 4px rgba(255,255,255,0.5)' : 'none',
+              boxShadow: star.size > 2 ? '0 0 6px rgba(255,255,255,0.8)' : '0 0 2px rgba(255,255,255,0.5)',
+              animation: `twinkle ${star.twinkleDuration}s ease-in-out ${star.twinkleDelay}s infinite, float ${star.floatDuration}s ease-in-out ${star.floatDelay}s infinite`,
             }}
           />
         ))}
