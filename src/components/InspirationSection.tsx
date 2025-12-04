@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronsRight } from "lucide-react";
-import featureImage1 from "@/assets/feature-image-1.png";
+import illustrateCase from "@/assets/illustrate-case.webp";
 
 interface Tool {
   title: string;
@@ -77,7 +77,7 @@ const InspirationSection = () => {
                   <div className="relative shrink-0">
                     <div className="w-[320px] h-[260px] rounded-lg border-2 border-cyan/30 overflow-hidden bg-cyan/10">
                       <img 
-                        src={featureImage1} 
+                        src={illustrateCase} 
                         alt="AI Creative Tool"
                         className="w-full h-full object-cover"
                       />
