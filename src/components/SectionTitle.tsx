@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import userstory1 from "@/assets/userstory-1.webp";
 import userstory2 from "@/assets/userstory-2.webp";
 import userstory3 from "@/assets/userstory-3.webp";
@@ -15,6 +15,7 @@ const column3Images = [userstory7, userstory8, userstory9];
 
 const ScrollingColumn = ({ images, direction }: { images: string[]; direction: "up" | "down" }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
@@ -25,34 +26,38 @@ const ScrollingColumn = ({ images, direction }: { images: string[]; direction: "
     const scrollSpeed = direction === "up" ? 0.3 : -0.3;
 
     const scroll = () => {
-      scrollPosition += scrollSpeed;
-      
-      if (direction === "up" && scrollPosition >= scrollContainer.scrollHeight / 2) {
-        scrollPosition = 0;
-      } else if (direction === "down" && scrollPosition <= 0) {
-        scrollPosition = scrollContainer.scrollHeight / 2;
+      if (!isPaused) {
+        scrollPosition += scrollSpeed;
+        
+        if (direction === "up" && scrollPosition >= scrollContainer.scrollHeight / 2) {
+          scrollPosition = 0;
+        } else if (direction === "down" && scrollPosition <= 0) {
+          scrollPosition = scrollContainer.scrollHeight / 2;
+        }
+        
+        scrollContainer.scrollTop = scrollPosition;
       }
-      
-      scrollContainer.scrollTop = scrollPosition;
       animationId = requestAnimationFrame(scroll);
     };
 
     animationId = requestAnimationFrame(scroll);
 
     return () => cancelAnimationFrame(animationId);
-  }, [direction]);
+  }, [direction, isPaused]);
 
   return (
     <div 
       ref={scrollRef}
       className="flex flex-col gap-2 h-[500px] overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
       {[...images, ...images].map((img, i) => (
         <img 
           key={i} 
           src={img} 
           alt={`User story ${i + 1}`}
-          className="w-full rounded-lg flex-shrink-0 shadow-sm"
+          className="w-full rounded-lg flex-shrink-0 shadow-sm transition-all duration-300 hover:brightness-110 hover:shadow-md hover:scale-[1.02]"
         />
       ))}
     </div>
