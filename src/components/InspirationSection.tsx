@@ -12,7 +12,7 @@ interface Tool {
 
 const sectionTitles = [
   "When inspiration strikes—<br />create instantly",
-  "You're the creator—and the crew",
+  "You're the creator—<br />and the crew",
   "When inspiration strikes—<br />create instantly",
   "When inspiration strikes—<br />create instantly"
 ];
