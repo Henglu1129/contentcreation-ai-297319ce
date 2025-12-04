@@ -63,7 +63,7 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
                 </div>
                 
                 {/* Left: Content */}
-                <div className="w-[350px] shrink-0">
+                <div className="flex-1">
                   <a 
                     href={tool.link}
                     target="_blank"
