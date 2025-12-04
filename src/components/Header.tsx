@@ -15,10 +15,6 @@ const Header = () => {
 
         {/* Nav Links */}
         <nav className="flex items-center gap-7">
-          <button className="flex items-center gap-0 font-jetbrains font-bold text-sm uppercase tracking-tight text-foreground/80 hover:text-foreground transition-colors">
-            THEMES
-            <ChevronDown className="w-6 h-6" />
-          </button>
           <button className="font-jetbrains font-bold text-sm uppercase tracking-tight text-foreground/80 hover:text-foreground transition-colors">
             Agent Store
           </button>
