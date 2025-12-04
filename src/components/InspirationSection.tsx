@@ -1,53 +1,82 @@
 import { ChevronsRight } from "lucide-react";
 import featureImage1 from "@/assets/feature-image-1.png";
 
+interface ToolItemProps {
+  title: string;
+  description: string;
+  link: string;
+}
+
+const ToolItem = ({ title, description, link }: ToolItemProps) => {
+  return (
+    <div className="group border-t border-foreground/10 py-4">
+      <a 
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
+        {/* Collapsed state - just title */}
+        <h3 className="font-jetbrains font-bold text-base uppercase tracking-[0.15em] text-foreground group-hover:mb-3 transition-all">
+          {title}
+        </h3>
+        
+        {/* Expanded state on hover */}
+        <div className="max-h-0 overflow-hidden group-hover:max-h-[200px] transition-all duration-300">
+          <p className="font-inter text-sm text-foreground/70 mb-4">
+            {description}
+          </p>
+          <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2.5 rounded font-jetbrains font-bold text-xs uppercase tracking-wider">
+            Free Trial
+            <ChevronsRight className="w-4 h-4" />
+          </span>
+        </div>
+      </a>
+    </div>
+  );
+};
+
 const InspirationSection = () => {
+  const tools = [
+    {
+      title: "Illustrate Mind Spark 2",
+      description: "Turn ideas or quotes into illustrated social posts with text and art in one click.",
+      link: "https://mulerun.com/@Rhino/illustrate-mind-spark-2"
+    },
+    {
+      title: "Content Pilot AI",
+      description: "Generate engaging content ideas and full posts powered by AI in seconds.",
+      link: "https://mulerun.com/@cqplaquemh41i2k/content-pilot-ai"
+    }
+  ];
+
   return (
     <section className="py-16 bg-background">
-      {/* Section 1 - When inspiration strikes */}
-      <div className="px-[60px] py-12">
-        <h2 className="font-inter font-bold text-5xl leading-[120%] text-foreground mb-10 max-w-[700px]">
-          When inspiration strikes—<br />create instantly
-        </h2>
-        
+      <div className="px-[60px]">
         <div className="flex gap-[80px] items-start justify-center">
           {/* Left Content */}
-          <div className="flex flex-col">
-            {/* Card with lavender background */}
-            <div className="bg-lavender/50 rounded-lg p-6 max-w-[500px] relative">
+          <div className="max-w-[500px]">
+            <h2 className="font-inter font-bold text-5xl leading-[120%] text-foreground mb-8">
+              When inspiration strikes—<br />create instantly
+            </h2>
+            
+            {/* Tools list with hover expand */}
+            <div className="bg-lavender/40 rounded-lg p-6 relative">
               {/* Decorative arrows */}
-              <div className="absolute -top-4 right-8 flex gap-1">
-                <ChevronsRight className="w-8 h-8 text-cyan rotate-180" />
-                <ChevronsRight className="w-8 h-8 text-cyan rotate-180" />
-                <ChevronsRight className="w-8 h-8 text-cyan rotate-180" />
+              <div className="absolute -top-2 right-8 flex">
+                <ChevronsRight className="w-6 h-6 text-cyan rotate-180" />
+                <ChevronsRight className="w-6 h-6 text-cyan rotate-180 -ml-2" />
+                <ChevronsRight className="w-6 h-6 text-cyan rotate-180 -ml-2" />
               </div>
               
-              <h3 className="font-jetbrains font-bold text-lg uppercase tracking-[0.2em] text-foreground mb-3">
-                Illustrate Mind Spark 2
-              </h3>
-              <p className="font-inter text-base text-foreground/80 mb-5">
-                Turn ideas or quotes into illustrated social posts with text and art in one click.
-              </p>
-              <a 
-                href="https://mulerun.com/@Rhino/illustrate-mind-spark-2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded font-jetbrains font-bold text-sm uppercase tracking-wider"
-              >
-                Free Trial
-                <ChevronsRight className="w-5 h-5" />
-              </a>
-              
-              <div className="mt-6 pt-4 border-t border-foreground/10">
-                <a 
-                  href="https://mulerun.com/@cqplaquemh41i2k/content-pilot-ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-jetbrains font-bold text-sm uppercase tracking-[0.15em] text-foreground hover:text-foreground/70 transition-colors"
-                >
-                  Content Pilot AI
-                </a>
-              </div>
+              {tools.map((tool, index) => (
+                <ToolItem 
+                  key={index}
+                  title={tool.title}
+                  description={tool.description}
+                  link={tool.link}
+                />
+              ))}
             </div>
           </div>
 
