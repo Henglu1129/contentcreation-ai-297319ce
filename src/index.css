@@ -1,57 +1,68 @@
+@import "@fontsource/anton";
+@import "@fontsource/jetbrains-mono";
+@import "@fontsource/jetbrains-mono/700.css";
+@import "@fontsource/inter";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* MuleRun color palette */
+    --background: 40 9% 96%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 40 9% 90%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 40 9% 90%;
+    --muted-foreground: 0 0% 0% / 0.7;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 54 96% 60%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
+    --border: 54 86% 46%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 54 96% 60%;
 
     --radius: 0.5rem;
 
+    /* Custom MuleRun colors */
+    --yellow-bright: 54 98% 60%;
+    --yellow-light: 54 100% 86%;
+    --yellow-glow: 54 86% 46%;
+    --yellow-soft: 55 88% 78%;
+    
+    --cyan: 206 61% 81%;
+    --lavender: 248 100% 90%;
+    
+    --stone: 40 9% 96%;
+    --stone-dark: 40 6% 89%;
+
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -100,6 +111,44 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+}
+
+@layer utilities {
+  .font-anton {
+    font-family: "Anton", sans-serif;
+  }
+  
+  .font-jetbrains {
+    font-family: "JetBrains Mono", monospace;
+  }
+  
+  .font-inter {
+    font-family: "Inter", sans-serif;
+  }
+  
+  .font-jakarta {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  .highlight-yellow {
+    @apply bg-yellow-bright px-1;
+  }
+
+  .highlight-yellow-light {
+    @apply bg-yellow-light px-1;
+  }
+
+  .card-shadow-yellow {
+    box-shadow: 4px 4px 0px 0px hsl(var(--yellow-glow));
+  }
+
+  .card-shadow-yellow-strong {
+    box-shadow: 6px 6px 0px 0px hsl(var(--yellow-glow) / 0.4);
+  }
+
+  .text-gradient-dark {
+    @apply bg-gradient-to-b from-foreground to-foreground/80 bg-clip-text text-transparent;
   }
 }
