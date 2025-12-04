@@ -25,7 +25,7 @@ const sectionTitles = [
 
 const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
   const [expandedIndex, setExpandedIndex] = useState(0);
-  const isReversed = blockIndex === 1; // 第二个section图片在左边
+  const isReversed = blockIndex === 1 || blockIndex === 3; // 第二和第四个section图片在左边
 
   const defaultTools: Tool[] = [
     {
