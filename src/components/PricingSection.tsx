@@ -142,7 +142,7 @@ const PricingSection = () => {
             <span className="font-inter font-bold text-base text-foreground block mb-10">
               Buy 8 pro platforms separately
             </span>
-            <div className="font-inter font-bold text-3xl text-stone-dark/70 line-through text-center">
+            <div className="font-inter font-bold text-3xl text-gray-500 line-through text-center">
               ¥1,596/month
             </div>
           </div>
