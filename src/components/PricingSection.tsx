@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import logoDescriprt from "@/assets/logo-descript.png";
 import logoMidjourney from "@/assets/logo-midjourney.png";
 import logoImages from "@/assets/logo-images.png";
@@ -6,8 +7,11 @@ import logoVeed from "@/assets/logo-veed.png";
 import logoHubspot from "@/assets/logo-hubspot.jpg";
 import logoCanva from "@/assets/logo-canva.png";
 import logoRepurpose from "@/assets/logo-repurpose.jpg";
+import logoMule from "@/assets/logo-mule.png";
 
 const PricingSection = () => {
+  const [phase, setPhase] = useState<'spread' | 'converging' | 'merged' | 'expanding'>('spread');
+  
   const logos = [
     { src: logoDescriprt, alt: "Descript" },
     { src: logoMidjourney, alt: "Midjourney" },
@@ -18,6 +22,86 @@ const PricingSection = () => {
     { src: logoCanva, alt: "Canva" },
     { src: logoRepurpose, alt: "Repurpose" },
   ];
+
+  useEffect(() => {
+    const timings = {
+      spread: 1500,      // Show spread for 1.5s
+      converging: 1200,  // Converge animation 1.2s
+      merged: 2500,      // Show mule logo for 2.5s
+      expanding: 1200,   // Expand animation 1.2s
+    };
+
+    const timer = setTimeout(() => {
+      setPhase(current => {
+        switch (current) {
+          case 'spread': return 'converging';
+          case 'converging': return 'merged';
+          case 'merged': return 'expanding';
+          case 'expanding': return 'spread';
+          default: return 'spread';
+        }
+      });
+    }, timings[phase]);
+
+    return () => clearTimeout(timer);
+  }, [phase]);
+
+  // Calculate position offsets for each logo based on phase
+  const getLogoStyle = (index: number) => {
+    const isConverging = phase === 'converging';
+    const isExpanding = phase === 'expanding';
+    const isMerged = phase === 'merged';
+    
+    // Offset from center: negative for left side, positive for right side
+    const centerIndex = 3.5; // Center between index 3 and 4
+    const distanceFromCenter = index - centerIndex;
+    
+    // Base spread distance (in pixels)
+    const spreadDistance = Math.abs(distanceFromCenter) * 50;
+    const direction = distanceFromCenter < 0 ? -1 : 1;
+    
+    if (isMerged) {
+      return {
+        transform: `translateX(${-distanceFromCenter * 50}px) scale(0)`,
+        opacity: 0,
+        transition: 'none',
+      };
+    }
+    
+    if (isConverging) {
+      return {
+        transform: `translateX(${-distanceFromCenter * 50}px) scale(0.3)`,
+        opacity: 0,
+        transition: 'all 1.2s ease-in-out',
+      };
+    }
+    
+    if (isExpanding) {
+      return {
+        transform: `translateX(0) scale(1)`,
+        opacity: 1,
+        transition: 'all 1.2s ease-out',
+      };
+    }
+    
+    // Spread phase
+    return {
+      transform: `translateX(0) scale(1)`,
+      opacity: 1,
+      transition: 'all 0.3s ease-out',
+    };
+  };
+
+  const getMuleLogoStyle = () => {
+    const isVisible = phase === 'merged' || phase === 'converging';
+    const isFullyVisible = phase === 'merged';
+    
+    return {
+      opacity: isFullyVisible ? 1 : phase === 'converging' ? 0.8 : 0,
+      transform: isFullyVisible ? 'scale(1)' : 'scale(0.5)',
+      transition: phase === 'converging' ? 'all 1s ease-in-out 0.8s' : 'all 0.5s ease-out',
+    };
+  };
 
   return (
     <section className="bg-yellow-light py-16 px-6">
@@ -31,11 +115,13 @@ const PricingSection = () => {
           </p>
         </div>
 
-        {/* Platform Icons */}
-        <div className="flex justify-center gap-3 md:gap-4 mb-12">
+        {/* Platform Icons with Animation */}
+        <div className="relative flex justify-center gap-3 md:gap-4 mb-12 min-h-[85px]">
+          {/* Individual logos */}
           {logos.map((logo, index) => (
             <div 
               key={index}
+              style={getLogoStyle(index)}
               className="w-16 h-16 md:w-[85px] md:h-[85px] rounded-full border border-foreground/10 flex items-center justify-center shadow-sm overflow-hidden"
             >
               <img 
@@ -45,6 +131,18 @@ const PricingSection = () => {
               />
             </div>
           ))}
+          
+          {/* Mule logo (appears when merged) */}
+          <div 
+            style={getMuleLogoStyle()}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-24 md:h-24 rounded-full border border-foreground/10 flex items-center justify-center shadow-lg overflow-hidden bg-[#FDFBF5]"
+          >
+            <img 
+              src={logoMule} 
+              alt="Mulerun" 
+              className="w-full h-full object-contain p-1"
+            />
+          </div>
         </div>
 
         {/* Pricing Label */}
