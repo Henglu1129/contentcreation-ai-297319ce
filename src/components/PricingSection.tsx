@@ -36,12 +36,12 @@ const PricingSection = () => {
           {logos.map((logo, index) => (
             <div 
               key={index}
-              className="w-16 h-16 md:w-[85px] md:h-[85px] bg-[#FDFBF5] rounded-full border border-foreground/10 flex items-center justify-center shadow-sm overflow-hidden"
+              className="w-16 h-16 md:w-[85px] md:h-[85px] rounded-full border border-foreground/10 flex items-center justify-center shadow-sm overflow-hidden"
             >
               <img 
                 src={logo.src} 
                 alt={logo.alt} 
-                className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
           ))}
