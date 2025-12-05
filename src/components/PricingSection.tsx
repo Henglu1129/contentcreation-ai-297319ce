@@ -1,8 +1,26 @@
-import { Check, ArrowRight, Twitter, Facebook, Youtube, Instagram, Send, Mail, Pause } from "lucide-react";
+import logoDescriprt from "@/assets/logo-descript.png";
+import logoMidjourney from "@/assets/logo-midjourney.png";
+import logoImages from "@/assets/logo-images.png";
+import logoCapcut from "@/assets/logo-capcut.png";
+import logoVeed from "@/assets/logo-veed.png";
+import logoHubspot from "@/assets/logo-hubspot.jpg";
+import logoCanva from "@/assets/logo-canva.png";
+import logoRepurpose from "@/assets/logo-repurpose.png";
 
 const PricingSection = () => {
+  const logos = [
+    { src: logoDescriprt, alt: "Descript" },
+    { src: logoMidjourney, alt: "Midjourney" },
+    { src: logoImages, alt: "Images" },
+    { src: logoCapcut, alt: "CapCut" },
+    { src: logoVeed, alt: "Veed" },
+    { src: logoHubspot, alt: "HubSpot" },
+    { src: logoCanva, alt: "Canva" },
+    { src: logoRepurpose, alt: "Repurpose" },
+  ];
+
   return (
-<section className="bg-yellow-light py-16 px-6">
+    <section className="bg-yellow-light py-16 px-6">
       <div className="bg-[#FDFBF5] rounded-2xl p-12 max-w-[1200px] mx-auto">
         <div className="text-center mb-12">
           <h2 className="font-anton text-5xl md:text-6xl text-foreground mb-4">
@@ -13,122 +31,110 @@ const PricingSection = () => {
           </p>
         </div>
 
-      {/* Platform Icons */}
-      <div className="flex justify-center gap-3 md:gap-4 mb-12">
-        <div className="w-16 h-16 md:w-[85px] md:h-[85px] bg-yellow-cream rounded-full border border-foreground/10 flex items-center justify-center shadow-sm">
-          <Twitter className="w-7 h-7 md:w-10 md:h-10 text-blue-500" />
+        {/* Platform Icons */}
+        <div className="flex justify-center gap-3 md:gap-4 mb-12">
+          {logos.map((logo, index) => (
+            <div 
+              key={index}
+              className="w-16 h-16 md:w-[85px] md:h-[85px] bg-[#FDFBF5] rounded-full border border-foreground/10 flex items-center justify-center shadow-sm overflow-hidden"
+            >
+              <img 
+                src={logo.src} 
+                alt={logo.alt} 
+                className="w-10 h-10 md:w-12 md:h-12 object-contain"
+              />
+            </div>
+          ))}
         </div>
-        <div className="w-16 h-16 md:w-[85px] md:h-[85px] bg-yellow-cream rounded-full border border-foreground/10 flex items-center justify-center shadow-sm">
-          <ArrowRight className="w-7 h-7 md:w-10 md:h-10 text-blue-600 rotate-[-45deg]" />
-        </div>
-        <div className="w-16 h-16 md:w-[85px] md:h-[85px] bg-yellow-cream rounded-full border border-foreground/10 flex items-center justify-center shadow-sm">
-          <Mail className="w-7 h-7 md:w-10 md:h-10 text-cyan" />
-        </div>
-        <div className="w-16 h-16 md:w-[85px] md:h-[85px] bg-foreground rounded-full border border-foreground/10 flex items-center justify-center shadow-sm">
-          <span className="text-background font-bold text-2xl md:text-3xl">P</span>
-        </div>
-        <div className="w-16 h-16 md:w-[85px] md:h-[85px] bg-yellow-cream rounded-full border border-foreground/10 flex items-center justify-center shadow-sm">
-          <Send className="w-7 h-7 md:w-10 md:h-10 text-foreground/70" />
-        </div>
-        <div className="w-16 h-16 md:w-[85px] md:h-[85px] bg-yellow-cream rounded-full border border-foreground/10 flex items-center justify-center shadow-sm">
-          <Facebook className="w-7 h-7 md:w-10 md:h-10 text-purple-500" />
-        </div>
-        <div className="w-16 h-16 md:w-[85px] md:h-[85px] bg-yellow-cream rounded-full border border-foreground/10 flex items-center justify-center shadow-sm">
-          <Youtube className="w-7 h-7 md:w-10 md:h-10 text-foreground" />
-        </div>
-        <div className="w-16 h-16 md:w-[85px] md:h-[85px] bg-yellow-cream rounded-full border border-foreground/10 flex items-center justify-center shadow-sm">
-          <Pause className="w-7 h-7 md:w-10 md:h-10 text-foreground" />
-        </div>
-      </div>
 
-      {/* Pricing Label */}
-      <div className="text-center mb-8">
-        <span className="font-inter text-sm text-muted-foreground">
-          Multiple pro platforms = <span className="text-cyan">Mulerun has them all.</span>
-        </span>
-      </div>
-
-      {/* Pricing Cards */}
-      <div className="flex gap-6 justify-center mb-12">
-        <div className="bg-background border border-foreground/20 rounded-lg p-6 w-[280px]">
-          <span className="font-jetbrains text-xs uppercase text-muted-foreground block mb-2">
-            Buy 3 separate accounts:
+        {/* Pricing Label */}
+        <div className="text-center mb-8">
+          <span className="font-inter text-sm text-muted-foreground">
+            Multiple pro platforms = <span className="text-cyan">Mulerun has them all.</span>
           </span>
-          <div className="font-inter font-bold text-2xl text-foreground">
-            $65-85/month
-          </div>
         </div>
-        
-        <div className="bg-cyan rounded-lg p-6 w-[280px] relative">
-          <span className="font-jetbrains text-xs uppercase text-foreground/70 block mb-2">
-            Get everything with Mulerun:
-          </span>
-          <div className="font-inter font-bold text-lg text-foreground">
-            starting at 
-            <span className="text-2xl ml-1">$x.xx/mo</span>
-          </div>
-        </div>
-        
-        <div className="bg-background border border-foreground/20 rounded-lg p-6 w-[280px]">
-          <span className="font-jetbrains text-xs uppercase text-muted-foreground block mb-2">
-            Annual savings:
-          </span>
-          <div className="font-inter font-bold text-2xl text-yellow-bright">
-            $17,264/year
-          </div>
-        </div>
-      </div>
 
-      {/* Features */}
-      <div className="flex justify-center gap-16 mb-12">
-        <div className="text-center">
-          <div className="w-12 h-12 bg-foreground/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-            <span className="text-2xl">⚡</span>
+        {/* Pricing Cards */}
+        <div className="flex gap-6 justify-center mb-12">
+          <div className="bg-background border border-foreground/20 rounded-lg p-6 w-[280px]">
+            <span className="font-jetbrains text-xs uppercase text-muted-foreground block mb-2">
+              Buy 3 separate accounts:
+            </span>
+            <div className="font-inter font-bold text-2xl text-foreground">
+              $65-85/month
+            </div>
           </div>
-          <h3 className="font-inter font-bold text-lg text-foreground mb-2">hit</h3>
-          <p className="font-inter text-xs text-muted-foreground max-w-[200px]">
-            Over countless AI features—video scripts, captions, thumbnails, shorts.
-          </p>
-        </div>
-        
-        <div className="text-center">
-          <div className="w-12 h-12 bg-foreground/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-            <span className="text-2xl">🎯</span>
+          
+          <div className="bg-cyan rounded-lg p-6 w-[280px] relative">
+            <span className="font-jetbrains text-xs uppercase text-foreground/70 block mb-2">
+              Get everything with Mulerun:
+            </span>
+            <div className="font-inter font-bold text-lg text-foreground">
+              starting at 
+              <span className="text-2xl ml-1">$x.xx/mo</span>
+            </div>
           </div>
-          <h3 className="font-inter font-bold text-lg text-foreground mb-2">Quality</h3>
-          <p className="font-inter text-xs text-muted-foreground max-w-[200px]">
-            No more juggling multiple tools. Everything in one place, one login, one workflow.
-          </p>
-        </div>
-        
-        <div className="text-center">
-          <div className="w-12 h-12 bg-foreground/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-            <span className="text-2xl">💎</span>
+          
+          <div className="bg-background border border-foreground/20 rounded-lg p-6 w-[280px]">
+            <span className="font-jetbrains text-xs uppercase text-muted-foreground block mb-2">
+              Annual savings:
+            </span>
+            <div className="font-inter font-bold text-2xl text-yellow-bright">
+              $17,264/year
+            </div>
           </div>
-          <h3 className="font-inter font-bold text-lg text-foreground mb-2">$?</h3>
-          <p className="font-inter text-xs text-muted-foreground max-w-[200px]">
-            Predictable and scalable pricing for every stage of growth.
-          </p>
         </div>
-      </div>
 
-      {/* CTA Button */}
-      <div className="flex flex-col items-center">
-        <button className="bg-foreground text-background px-6 py-3 rounded font-jetbrains font-bold text-sm uppercase flex items-center gap-2 hover:bg-foreground/90 transition-colors">
-          Sign Up Now
-          <span className="tracking-tighter">&gt;&gt;</span>
-        </button>
-        {/* Tooltip bubble */}
-        <div className="relative mt-4">
-          {/* Arrow pointing up */}
-          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-yellow-bright rotate-45" />
-          {/* Bubble */}
-          <div className="bg-yellow-bright text-foreground px-5 py-3 rounded-lg relative">
-            <p className="font-inter text-sm font-medium text-center">Get 300 free credits now.</p>
-            <p className="font-inter text-sm text-center">No card required.</p>
+        {/* Features */}
+        <div className="flex justify-center gap-16 mb-12">
+          <div className="text-center">
+            <div className="w-12 h-12 bg-foreground/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl">⚡</span>
+            </div>
+            <h3 className="font-inter font-bold text-lg text-foreground mb-2">hit</h3>
+            <p className="font-inter text-xs text-muted-foreground max-w-[200px]">
+              Over countless AI features—video scripts, captions, thumbnails, shorts.
+            </p>
+          </div>
+          
+          <div className="text-center">
+            <div className="w-12 h-12 bg-foreground/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl">🎯</span>
+            </div>
+            <h3 className="font-inter font-bold text-lg text-foreground mb-2">Quality</h3>
+            <p className="font-inter text-xs text-muted-foreground max-w-[200px]">
+              No more juggling multiple tools. Everything in one place, one login, one workflow.
+            </p>
+          </div>
+          
+          <div className="text-center">
+            <div className="w-12 h-12 bg-foreground/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl">💎</span>
+            </div>
+            <h3 className="font-inter font-bold text-lg text-foreground mb-2">$?</h3>
+            <p className="font-inter text-xs text-muted-foreground max-w-[200px]">
+              Predictable and scalable pricing for every stage of growth.
+            </p>
           </div>
         </div>
-      </div>
+
+        {/* CTA Button */}
+        <div className="flex flex-col items-center">
+          <button className="bg-foreground text-background px-6 py-3 rounded font-jetbrains font-bold text-sm uppercase flex items-center gap-2 hover:bg-foreground/90 transition-colors">
+            Sign Up Now
+            <span className="tracking-tighter">&gt;&gt;</span>
+          </button>
+          {/* Tooltip bubble */}
+          <div className="relative mt-4">
+            {/* Arrow pointing up */}
+            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-yellow-bright rotate-45" />
+            {/* Bubble */}
+            <div className="bg-yellow-bright text-foreground px-5 py-3 rounded-lg relative">
+              <p className="font-inter text-sm font-medium text-center">Get 300 free credits now.</p>
+              <p className="font-inter text-sm text-center">No card required.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
