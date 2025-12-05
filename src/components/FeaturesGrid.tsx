@@ -6,7 +6,7 @@ const FeaturesGrid = () => {
       title: "Out of content ideas?",
       description: "How can I turn a vague thought into a full post — in seconds?",
       cards: [
-        { title: "Turn Idea to Visual", description: "Turn your rough idea into a stunning visual—no design skills needed.", hasButton: true, link: "https://mulerun.com/@Rhino/illustrate-mind-spark-2", imageIndex: 0 },
+        { title: "Turn Idea to Visual", description: "Turn ideas into visuals—no design skills needed.", hasButton: true, link: "https://mulerun.com/@Rhino/illustrate-mind-spark-2", imageIndex: 0 },
         { title: "Write Copy", hasButton: true, link: "https://mulerun.com/@cqplaquemh41i2k/content-pilot-ai", imageIndex: 1 },
       ],
       layout: "right",
