@@ -168,13 +168,16 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
             return (
               <div 
                 key={index}
-                className={`py-4 border-t border-foreground/10 cursor-pointer text-center lg:text-left transition-all duration-200 hover:bg-lavender/20 hover:pl-4 hover:pr-4 rounded ${isReversed ? 'lg:text-right' : ''}`}
+                className={`group py-4 px-4 border-t border-foreground/10 cursor-pointer text-center lg:text-left transition-all duration-300 hover:bg-lavender/40 hover:border-lavender rounded-lg ${isReversed ? 'lg:text-right' : ''}`}
                 onMouseEnter={() => setExpandedIndex(index)}
                 onClick={() => setExpandedIndex(index)}
               >
-                <h3 className="font-jetbrains font-bold text-base md:text-lg uppercase tracking-wide text-foreground transition-colors duration-200 hover:text-primary">
-                  {tool.title}
-                </h3>
+                <div className={`flex items-center gap-3 justify-center lg:justify-start ${isReversed ? 'lg:justify-end lg:flex-row-reverse' : ''}`}>
+                  <ChevronsRight className={`w-5 h-5 text-foreground/40 group-hover:text-primary transition-all duration-300 group-hover:translate-x-1 ${isReversed ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
+                  <h3 className="font-jetbrains font-bold text-base md:text-lg uppercase tracking-wide text-foreground/70 group-hover:text-foreground transition-colors duration-300">
+                    {tool.title}
+                  </h3>
+                </div>
               </div>
             );
           }
