@@ -25,10 +25,10 @@ const PricingSection = () => {
 
   useEffect(() => {
     const timings = {
-      spread: 1500,      // Show spread for 1.5s
-      converging: 1200,  // Converge animation 1.2s
-      merged: 2500,      // Show mule logo for 2.5s
-      expanding: 1200,   // Expand animation 1.2s
+      spread: 1500,
+      converging: 1200,
+      merged: 2500,
+      expanding: 1200,
     };
 
     const timer = setTimeout(() => {
@@ -46,62 +46,25 @@ const PricingSection = () => {
     return () => clearTimeout(timer);
   }, [phase]);
 
-  // Calculate position offsets for each logo based on phase
-  const getLogoStyle = (index: number) => {
-    const isConverging = phase === 'converging';
-    const isExpanding = phase === 'expanding';
-    const isMerged = phase === 'merged';
+  // Calculate horizontal offset to move logos to center
+  const getLogoOffset = (index: number) => {
+    // Position 0-3 are on left side, 4-7 are on right side
+    // Each logo needs to move towards the center
+    // Gap is 16px (gap-4), logo size is 85px
+    const logoSize = 85;
+    const gap = 16;
+    const totalWidth = logoSize + gap;
     
-    // Offset from center: negative for left side, positive for right side
-    const centerIndex = 3.5; // Center between index 3 and 4
-    const distanceFromCenter = index - centerIndex;
+    // Distance from center for each logo
+    // Index 0,1,2,3 -> left side (negative offset to go right)
+    // Index 4,5,6,7 -> right side (positive offset to go left)
+    const centerPosition = 3.5; // between index 3 and 4
+    const offsetFromCenter = (index - centerPosition) * totalWidth;
     
-    // Base spread distance (in pixels)
-    const spreadDistance = Math.abs(distanceFromCenter) * 50;
-    const direction = distanceFromCenter < 0 ? -1 : 1;
-    
-    if (isMerged) {
-      return {
-        transform: `translateX(${-distanceFromCenter * 50}px) scale(0)`,
-        opacity: 0,
-        transition: 'none',
-      };
-    }
-    
-    if (isConverging) {
-      return {
-        transform: `translateX(${-distanceFromCenter * 50}px) scale(0.3)`,
-        opacity: 0,
-        transition: 'all 1.2s ease-in-out',
-      };
-    }
-    
-    if (isExpanding) {
-      return {
-        transform: `translateX(0) scale(1)`,
-        opacity: 1,
-        transition: 'all 1.2s ease-out',
-      };
-    }
-    
-    // Spread phase
-    return {
-      transform: `translateX(0) scale(1)`,
-      opacity: 1,
-      transition: 'all 0.3s ease-out',
-    };
+    return -offsetFromCenter; // Negative because we want to move towards center
   };
 
-  const getMuleLogoStyle = () => {
-    const isVisible = phase === 'merged' || phase === 'converging';
-    const isFullyVisible = phase === 'merged';
-    
-    return {
-      opacity: isFullyVisible ? 1 : phase === 'converging' ? 0.8 : 0,
-      transform: isFullyVisible ? 'scale(1)' : 'scale(0.5)',
-      transition: phase === 'converging' ? 'all 1s ease-in-out 0.8s' : 'all 0.5s ease-out',
-    };
-  };
+  const isConvergedOrMerged = phase === 'converging' || phase === 'merged';
 
   return (
     <section className="bg-yellow-light py-16 px-6">
@@ -116,26 +79,39 @@ const PricingSection = () => {
         </div>
 
         {/* Platform Icons with Animation */}
-        <div className="relative flex justify-center gap-3 md:gap-4 mb-12 min-h-[85px]">
+        <div className="relative flex justify-center items-center gap-3 md:gap-4 mb-12 h-[85px]">
           {/* Individual logos */}
-          {logos.map((logo, index) => (
-            <div 
-              key={index}
-              style={getLogoStyle(index)}
-              className="w-16 h-16 md:w-[85px] md:h-[85px] rounded-full border border-foreground/10 flex items-center justify-center shadow-sm overflow-hidden"
-            >
-              <img 
-                src={logo.src} 
-                alt={logo.alt} 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+          {logos.map((logo, index) => {
+            const offset = getLogoOffset(index);
+            const shouldHide = phase === 'merged' || phase === 'converging';
+            
+            return (
+              <div 
+                key={index}
+                style={{
+                  transform: shouldHide ? `translateX(${offset}px) scale(0)` : 'translateX(0) scale(1)',
+                  opacity: shouldHide ? 0 : 1,
+                  transition: 'all 1s ease-in-out',
+                }}
+                className="w-16 h-16 md:w-[85px] md:h-[85px] rounded-full border border-foreground/10 flex items-center justify-center shadow-sm overflow-hidden flex-shrink-0"
+              >
+                <img 
+                  src={logo.src} 
+                  alt={logo.alt} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            );
+          })}
           
           {/* Mule logo (appears when merged) */}
           <div 
-            style={getMuleLogoStyle()}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-24 md:h-24 rounded-full border border-foreground/10 flex items-center justify-center shadow-lg overflow-hidden bg-[#FDFBF5]"
+            style={{
+              opacity: phase === 'merged' ? 1 : phase === 'converging' ? 0 : 0,
+              transform: phase === 'merged' ? 'translate(-50%, -50%) scale(1)' : 'translate(-50%, -50%) scale(0.5)',
+              transition: phase === 'converging' ? 'all 0.8s ease-out 0.5s' : phase === 'expanding' ? 'all 0.3s ease-in' : 'all 0.5s ease-out',
+            }}
+            className="absolute left-1/2 top-1/2 w-20 h-20 md:w-24 md:h-24 rounded-full border border-foreground/10 flex items-center justify-center shadow-lg overflow-hidden bg-[#FDFBF5]"
           >
             <img 
               src={logoMule} 
