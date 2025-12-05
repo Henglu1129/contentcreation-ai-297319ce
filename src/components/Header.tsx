@@ -6,7 +6,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="flex items-center justify-between px-4 md:px-[120px] py-4 h-20 bg-background">
+    <header className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-[120px] py-4 h-20 bg-background border-b border-border/20">
       <div className="flex items-center gap-4 md:gap-11">
         {/* Logo */}
         <a 
