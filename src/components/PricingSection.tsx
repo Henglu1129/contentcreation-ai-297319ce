@@ -245,7 +245,7 @@ const PricingSection = () => {
             </div>
             <h4 className="font-inter font-bold text-sm text-foreground mb-1">Unified Billing</h4>
             <p className="font-inter text-xs text-muted-foreground">
-              One invoice, one payment. No tracking multiple due dates or charges.
+              One invoice, one payment—no tracking multiple due dates or charges.
             </p>
           </div>
 
@@ -268,7 +268,7 @@ const PricingSection = () => {
             </div>
             <h4 className="font-inter font-bold text-sm text-foreground mb-1">Team Sync</h4>
             <p className="font-inter text-xs text-muted-foreground">
-              Coming soon: auto data sync across features—true end-to-end automation.
+              Coming soon: auto-sync across features—full end-to-end automation.
             </p>
           </div>
         </div>
