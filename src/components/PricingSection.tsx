@@ -2,8 +2,8 @@ import { Check, ArrowRight, Twitter, Facebook, Youtube, Instagram, Send, Mail, P
 
 const PricingSection = () => {
   return (
-<section className="bg-yellow-light py-16 px-[120px]">
-      <div className="bg-yellow-cream rounded-2xl p-12">
+<section className="bg-yellow-light py-16 px-6">
+      <div className="bg-yellow-cream rounded-2xl p-12 max-w-[1200px] mx-auto">
         <div className="text-center mb-12">
           <h2 className="font-anton text-4xl text-foreground mb-2">
             Mulerun's all-in-one edge
