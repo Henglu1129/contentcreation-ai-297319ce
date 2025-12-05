@@ -168,11 +168,11 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
             return (
               <div 
                 key={index}
-                className={`py-4 border-t border-foreground/10 cursor-pointer text-center lg:text-left ${isReversed ? 'lg:text-right' : ''}`}
+                className={`py-4 border-t border-foreground/10 cursor-pointer text-center lg:text-left transition-all duration-200 hover:bg-lavender/20 hover:pl-4 hover:pr-4 rounded ${isReversed ? 'lg:text-right' : ''}`}
                 onMouseEnter={() => setExpandedIndex(index)}
                 onClick={() => setExpandedIndex(index)}
               >
-                <h3 className="font-jetbrains font-bold text-base md:text-lg uppercase tracking-wide text-foreground">
+                <h3 className="font-jetbrains font-bold text-base md:text-lg uppercase tracking-wide text-foreground transition-colors duration-200 hover:text-primary">
                   {tool.title}
                 </h3>
               </div>
