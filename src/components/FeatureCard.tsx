@@ -12,6 +12,7 @@ import cardRepurpose from "@/assets/card-repurpose.png";
 
 interface FeatureCardProps {
   title: string;
+  description?: string;
   hasButton?: boolean;
   imageIndex?: number;
   link?: string;
@@ -19,7 +20,7 @@ interface FeatureCardProps {
 
 const images = [cardTurnIdea, cardWriteCopy, cardMakeShorts, cardPodcast, cardTranslate, cardGenerateTitle, cardThumbnail, cardRepurpose, cardImage1, cardImage2];
 
-const FeatureCard = ({ title, hasButton = false, imageIndex = 0, link }: FeatureCardProps) => {
+const FeatureCard = ({ title, description, hasButton = false, imageIndex = 0, link }: FeatureCardProps) => {
   const CardWrapper = link ? 'a' : 'div';
   const cardProps = link ? { href: link, target: "_blank", rel: "noopener noreferrer" } : {};
 
@@ -45,11 +46,16 @@ const FeatureCard = ({ title, hasButton = false, imageIndex = 0, link }: Feature
         />
       </div>
 
-      {/* Title */}
-      <div className="flex flex-col gap-2 items-start h-12">
+      {/* Title & Description */}
+      <div className="flex flex-col gap-1 items-start max-w-[180px]">
         <span className="font-inter font-semibold text-base leading-normal text-foreground">
           {title}
         </span>
+        {description && (
+          <span className="font-inter text-xs leading-tight text-muted-foreground">
+            {description}
+          </span>
+        )}
       </div>
 
       {/* Optional Button - shows on hover */}

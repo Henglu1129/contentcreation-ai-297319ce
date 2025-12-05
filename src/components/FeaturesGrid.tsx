@@ -6,7 +6,7 @@ const FeaturesGrid = () => {
       title: "Out of content ideas?",
       description: "How can I turn a vague thought into a full post — in seconds?",
       cards: [
-        { title: "Turn Idea to Visual", hasButton: true, link: "https://mulerun.com/@Rhino/illustrate-mind-spark-2", imageIndex: 0 },
+        { title: "Turn Idea to Visual", description: "Turn your rough idea into a stunning visual—no design skills needed.", hasButton: true, link: "https://mulerun.com/@Rhino/illustrate-mind-spark-2", imageIndex: 0 },
         { title: "Write Copy", hasButton: true, link: "https://mulerun.com/@cqplaquemh41i2k/content-pilot-ai", imageIndex: 1 },
       ],
       layout: "right",
@@ -81,7 +81,8 @@ const FeaturesGrid = () => {
                 {section.cards.slice(0, 2).map((card, cardIndex) => (
                   <FeatureCard 
                     key={cardIndex} 
-                    title={card.title} 
+                    title={card.title}
+                    description={card.description}
                     hasButton={card.hasButton}
                     link={card.link}
                     imageIndex={card.imageIndex}
@@ -94,6 +95,7 @@ const FeaturesGrid = () => {
                     <FeatureCard 
                       key={cardIndex + 2} 
                       title={card.title}
+                      description={card.description}
                       hasButton={card.hasButton}
                       link={card.link}
                       imageIndex={card.imageIndex}
