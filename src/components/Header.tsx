@@ -66,12 +66,12 @@ const Header = () => {
           BE A CREATOR
         </a>
         <a 
-          href="https://mulerun.com/sign-in" 
+          href="https://mulerun.com/signup" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2.5 rounded font-jetbrains font-bold text-sm uppercase tracking-tight hover:bg-primary/90 transition-colors"
         >
-          Sign In
+          Sign Up
           <ArrowRight className="w-5 h-5" />
         </a>
       </div>
