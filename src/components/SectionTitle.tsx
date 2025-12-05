@@ -87,7 +87,7 @@ const SectionTitle = () => {
         <div className="border-t-2 border-dashed border-foreground/20" />
         
         {/* 3 columns scrolling vertically */}
-        <div className="grid grid-cols-3 gap-6 py-8">
+        <div className="grid grid-cols-3 gap-6">
           <ScrollingColumn images={column1Images} direction="up" />
           <ScrollingColumn images={column2Images} direction="down" />
           <ScrollingColumn images={column3Images} direction="up" />
