@@ -165,10 +165,10 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
               </div>
             );
           } else {
-            return (
+          return (
               <div 
                 key={index}
-                className={`group py-4 px-4 border-t border-foreground/10 cursor-pointer text-center lg:text-left transition-all duration-300 hover:bg-lavender/40 hover:border-lavender rounded-lg ${isReversed ? 'lg:text-right' : ''}`}
+                className={`group py-4 px-4 border-t border-foreground/10 cursor-pointer text-center lg:text-left transition-all duration-300 hover:bg-lavender/40 hover:border-lavender rounded-lg ${isReversed ? 'lg:text-right lg:ml-auto lg:w-fit' : ''}`}
                 onMouseEnter={() => setExpandedIndex(index)}
                 onClick={() => setExpandedIndex(index)}
               >
