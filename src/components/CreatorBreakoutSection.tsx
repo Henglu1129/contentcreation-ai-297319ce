@@ -30,7 +30,7 @@ const mockCards: CreatorCard[] = [
     creatorAvatar: creatorUmutAktu,
     fans: "150K",
     rating: 9.5,
-    stars: 5,
+    stars: 4.5,
     description: "Discover how AI automation transforms YouTube content creation - from script to publish in minutes. A must-watch for creators!",
     source: "From YouTube",
     stats: "18K views · 3 days ago",
@@ -111,12 +111,28 @@ const mockCards: CreatorCard[] = [
 const RatingStars = ({ count }: { count: number }) => {
   return (
     <div className="flex gap-0.5">
-      {[...Array(5)].map((_, i) => (
-        <Star
-          key={i}
-          className={`w-3.5 h-3.5 ${i < count ? 'fill-yellow-400 text-yellow-400' : 'fill-gray-300 text-gray-300'}`}
-        />
-      ))}
+      {[...Array(5)].map((_, i) => {
+        const starValue = i + 1;
+        const isFull = count >= starValue;
+        const isHalf = !isFull && count >= starValue - 0.5;
+        
+        return (
+          <div key={i} className="relative w-3.5 h-3.5">
+            {/* Background star (empty) */}
+            <Star className="absolute inset-0 w-3.5 h-3.5 fill-gray-300 text-gray-300" />
+            {/* Filled star */}
+            {isFull && (
+              <Star className="absolute inset-0 w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+            )}
+            {/* Half star */}
+            {isHalf && (
+              <div className="absolute inset-0 overflow-hidden w-[50%]">
+                <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 };
