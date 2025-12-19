@@ -222,7 +222,7 @@ const CreatorBreakoutSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="font-anton text-2xl md:text-4xl uppercase tracking-tight text-foreground mb-4">
+          <h2 className="font-anton text-5xl leading-[120%] text-foreground mb-4">
             Become the Next Breakout Creator
           </h2>
           <p className="font-inter text-sm md:text-base text-foreground/70 max-w-2xl mx-auto leading-relaxed">
