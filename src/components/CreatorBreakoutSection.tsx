@@ -4,6 +4,7 @@ import creatorPlanckMind from "@/assets/creator-planckmind.jpg";
 import creatorAIMoneyManiac from "@/assets/creator-card3.jpg";
 import creatorMartinCash from "@/assets/creator-martin-cash.jpg";
 import creatorCard5 from "@/assets/creator-card5.jpg";
+import creatorCard6 from "@/assets/creator-card6.jpg";
 
 interface CreatorCard {
   thumbnail: string;
@@ -92,17 +93,18 @@ const mockCards: CreatorCard[] = [
     videoUrl: "https://www.youtube.com/watch?v=2FugAplwawk"
   },
   {
-    thumbnail: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=250&fit=crop",
-    duration: "",
-    title: "Here Is The Title.",
-    creatorName: "LunaBloom",
-    creatorAvatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop",
-    fans: "12.8w",
+    thumbnail: "https://img.youtube.com/vi/FcCGfLFlfiM/hqdefault.jpg",
+    duration: "5:49",
+    title: "MuleRun 2.0 This AI Replaces Your Entire Ecom Team",
+    creatorName: "INFINITE DIGITAL",
+    creatorAvatar: creatorCard6,
+    fans: "2.62M",
     rating: 9.2,
-    stars: 4,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ...",
+    stars: 5,
+    description: "See how MuleRun 2.0 can automate your entire ecommerce team's workflow with powerful AI agents!",
     source: "From YouTube",
-    stats: "One week ago · 1.2k Likes"
+    stats: "79.8K views · 3 weeks ago",
+    videoUrl: "https://www.youtube.com/watch?v=FcCGfLFlfiM"
   },
 ];
 
