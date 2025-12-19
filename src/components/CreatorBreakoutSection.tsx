@@ -254,7 +254,8 @@ const CreatorBreakoutSection = () => {
             duration: video.duration,
             title: video.title,
             creatorName: video.channelTitle,
-            creatorAvatar: video.channelThumbnail || static_.fallbackAvatar,
+            // Use static avatar from our assets instead of fetching from YouTube
+            creatorAvatar: static_.fallbackAvatar,
             fans: video.subscriberCount,
             rating: static_.rating,
             stars: static_.stars,
