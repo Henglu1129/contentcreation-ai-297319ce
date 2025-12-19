@@ -188,7 +188,7 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
       {blockIndex === 3 && (
         <div className="flex justify-center mt-20">
           <a
-            href="https://mulerun.com"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSepPJzLzbaR9o3CAVr2klu8RSsXOh6omxBz_M1Zu6hZsz77aA/viewform?usp=dialog"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-3 bg-foreground text-background px-10 py-5 rounded-lg font-jetbrains font-bold text-xl uppercase tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-xl overflow-hidden"
