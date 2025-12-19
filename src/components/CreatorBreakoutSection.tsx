@@ -3,6 +3,7 @@ import creatorUmutAktu from "@/assets/creator-umut-aktu.jpg";
 import creatorPlanckMind from "@/assets/creator-planckmind.jpg";
 import creatorAIMoneyManiac from "@/assets/creator-card3.jpg";
 import creatorMartinCash from "@/assets/creator-martin-cash.jpg";
+import creatorCard5 from "@/assets/creator-card5.jpg";
 
 interface CreatorCard {
   thumbnail: string;
@@ -77,17 +78,18 @@ const mockCards: CreatorCard[] = [
     videoUrl: "https://www.youtube.com/watch?v=HrKjPC_Racg"
   },
   {
-    thumbnail: "https://images.unsplash.com/photo-1618609378039-b572f64c5b42?w=400&h=250&fit=crop",
-    duration: "8:42",
-    title: "Here Is The Title.",
-    creatorName: "LunaBloom",
-    creatorAvatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop",
-    fans: "12.8w",
-    rating: 9.2,
+    thumbnail: "https://img.youtube.com/vi/RQWpF2Gb-gU/hqdefault.jpg",
+    duration: "15:23",
+    title: "MuleRun Review: AI Agent Marketplace for Creators & Developers",
+    creatorName: "Prompt Muse",
+    creatorAvatar: creatorCard5,
+    fans: "7.96M",
+    rating: 9.5,
     stars: 5,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ...",
-    source: "From X",
-    stats: "32,000 page views"
+    description: "In-depth review of MuleRun's AI agent marketplace - perfect for creators and developers looking to automate workflows!",
+    source: "From YouTube",
+    stats: "12K views · 3 days ago",
+    videoUrl: "https://www.youtube.com/watch?v=RQWpF2Gb-gU"
   },
   {
     thumbnail: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=250&fit=crop",
