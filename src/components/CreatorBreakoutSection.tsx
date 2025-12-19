@@ -43,11 +43,11 @@ const mockCards: CreatorCard[] = [
     creatorName: "PlanckMind",
     creatorAvatar: creatorPlanckMind,
     fans: "13.5K",
-    rating: 9.0,
-    stars: 5,
+    rating: 9.1,
+    stars: 4.5,
     description: "Explore the future of AI automation with MuleRun's marketplace - discover how to buy, sell, and deploy AI agents for your business!",
     source: "From YouTube",
-    stats: "407 views · 2 days ago",
+    stats: "420 views · 2 days ago",
     videoUrl: "https://www.youtube.com/watch?v=ygJsgrrUUH0"
   },
   {
