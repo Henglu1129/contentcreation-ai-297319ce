@@ -16,17 +16,17 @@ interface CreatorCard {
 
 const mockCards: CreatorCard[] = [
   {
-    thumbnail: "https://i.ytimg.com/vi/m8brjPr23j4/maxresdefault.jpg",
+    thumbnail: "https://img.youtube.com/vi/m8brjPr23j4/hqdefault.jpg",
     duration: "12:34",
     title: "Is It Possible to Produce 10 YouTube Motivational Videos a Day with AI?",
     creatorName: "Umut Aktu",
-    creatorAvatar: "https://yt3.ggpht.com/ytc/AIdro_kQKd-rJvX5R6FgLrPHLQWmvQaRRPMHXZD0xT5Q=s68-c-k-c0x00ffffff-no-rj",
-    fans: "15w",
+    creatorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop",
+    fans: "150K",
     rating: 9.5,
     stars: 5,
-    description: "揭秘AI自动化批量生产YouTube视频的完整流程，从脚本生成到发布只需几分钟，创作者必看的效率提升指南！",
+    description: "Discover how AI automation transforms YouTube content creation - from script to publish in minutes. A must-watch for creators!",
     source: "From YouTube",
-    stats: "1.8w views · 2 months ago"
+    stats: "18K views · 2 months ago"
   },
   {
     thumbnail: "https://images.unsplash.com/photo-1557683316-973673baf926?w=400&h=250&fit=crop",
