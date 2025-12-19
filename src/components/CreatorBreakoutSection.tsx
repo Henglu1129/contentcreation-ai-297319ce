@@ -78,7 +78,7 @@ const mockCards: CreatorCard[] = [
     videoUrl: "https://www.youtube.com/watch?v=HrKjPC_Racg"
   },
   {
-    thumbnail: "https://img.youtube.com/vi/RQWpF2Gb-gU/hqdefault.jpg",
+    thumbnail: "https://img.youtube.com/vi/2FugAplwawk/hqdefault.jpg",
     duration: "15:23",
     title: "MuleRun Review: AI Agent Marketplace for Creators & Developers",
     creatorName: "Prompt Muse",
@@ -89,7 +89,7 @@ const mockCards: CreatorCard[] = [
     description: "In-depth review of MuleRun's AI agent marketplace - perfect for creators and developers looking to automate workflows!",
     source: "From YouTube",
     stats: "12K views · 3 days ago",
-    videoUrl: "https://www.youtube.com/watch?v=RQWpF2Gb-gU"
+    videoUrl: "https://www.youtube.com/watch?v=2FugAplwawk"
   },
   {
     thumbnail: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=250&fit=crop",
