@@ -43,7 +43,7 @@ const VIDEO_IDS = [
   "RxXvya5v5Lw",
   "HrKjPC_Racg",
   "2FugAplwawk",
-  "FcCGfLFlfiM"
+  "zc9mdszta3A"
 ];
 
 // Static data for ratings and descriptions (not available from YouTube API)
@@ -78,7 +78,7 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     description: "Discover how MuleRun AI agents can automate your daily creative tasks and save you hours of work every day!",
     fallbackAvatar: creatorCard5
   },
-  "FcCGfLFlfiM": {
+  "zc9mdszta3A": {
     rating: 9.7,
     stars: 4.75,
     description: "See how MuleRun 2.0 can automate your entire ecommerce team's workflow with powerful AI agents!",
