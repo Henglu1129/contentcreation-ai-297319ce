@@ -79,8 +79,8 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     fallbackAvatar: creatorCard5
   },
   "zc9mdszta3A": {
-    rating: 9.7,
-    stars: 4.75,
+    rating: 9.1,
+    stars: 4.25,
     description: "Learn how to automate your content creation workflow with MuleRun AI agents - save hours of work every day!",
     fallbackAvatar: creatorCard6Avatar
   }
