@@ -6,7 +6,7 @@ import creatorPlanckMind from "@/assets/creator-planckmind.jpg";
 import creatorAIMoneyManiac from "@/assets/creator-card3.jpg";
 import creatorMartinCash from "@/assets/creator-martin-cash.jpg";
 import creatorCard5 from "@/assets/creator-card5.jpg";
-import creatorCard6 from "@/assets/creator-card6.jpg";
+import creatorCard6Avatar from "@/assets/creator-card6-avatar.jpg";
 
 interface CreatorCard {
   thumbnail: string;
@@ -82,7 +82,7 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     rating: 9.7,
     stars: 4.75,
     description: "See how MuleRun 2.0 can automate your entire ecommerce team's workflow with powerful AI agents!",
-    fallbackAvatar: creatorCard6
+    fallbackAvatar: creatorCard6Avatar
   }
 };
 
