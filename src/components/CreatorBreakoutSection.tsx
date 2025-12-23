@@ -81,7 +81,7 @@ const staticData: Record<string, { rating: number; stars: number; description: s
   "zc9mdszta3A": {
     rating: 9.7,
     stars: 4.75,
-    description: "See how MuleRun 2.0 can automate your entire ecommerce team's workflow with powerful AI agents!",
+    description: "Learn how to automate your content creation workflow with MuleRun AI agents - save hours of work every day!",
     fallbackAvatar: creatorCard6Avatar
   }
 };
