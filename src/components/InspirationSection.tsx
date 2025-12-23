@@ -75,7 +75,7 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
     {
       title: "YouTube Awesome Thumbnail",
       description: "Generate bold, face-focused YouTube thumbnails with integrated titles for high CTR.",
-      link: "https://mulerun.com/@summerail/youtube-awesome-thumbnail",
+      link: "https://www.youtube.com/watch?v=zc9mdszta3A",
       image: youtubeThumbnail
     }
   ];
