@@ -6,8 +6,22 @@ import heroCarousel3 from "@/assets/hero-carousel-3.jpg";
 
 const carouselImages = [heroCarousel2, heroCarousel1, heroCarousel3];
 
+// Helper function to get cookie value by name
+const getCookie = (name: string): string | null => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
+  return null;
+};
+
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = getCookie('token');
+    setIsLoggedIn(!!token);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -15,6 +29,16 @@ const HeroSection = () => {
     }, 4000);
     return () => clearInterval(timer);
   }, []);
+
+  const handleCTAClick = (e: React.MouseEvent) => {
+    if (isLoggedIn) {
+      e.preventDefault();
+      const section = document.getElementById('out-of-content-ideas');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <section className="px-4 md:px-[60px] pt-10 md:pt-20 pb-10 md:pb-[60px] flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-[80px]">
@@ -46,12 +70,13 @@ const HeroSection = () => {
         </div>
 
         <a 
-          href="https://mulerun.com/signin?continue=%2Fthemes%2Fcontentcreation-ai%2F" 
-          target="_blank" 
-          rel="noopener noreferrer"
+          href={isLoggedIn ? "#out-of-content-ideas" : "https://mulerun.com/signin?continue=%2Fthemes%2Fcontentcreation-ai%2F"}
+          onClick={handleCTAClick}
+          target={isLoggedIn ? undefined : "_blank"} 
+          rel={isLoggedIn ? undefined : "noopener noreferrer"}
           className="flex items-center gap-2.5 bg-primary text-primary-foreground px-4 py-2.5 rounded h-[52px] w-fit font-jetbrains font-bold text-lg md:text-xl hover:bg-primary/90 transition-colors"
         >
-          SIGN UP FOR FREE
+          {isLoggedIn ? "RUN IT NOW!" : "SIGN UP FOR FREE"}
           <ArrowRight className="w-6 h-6" />
         </a>
       </div>
