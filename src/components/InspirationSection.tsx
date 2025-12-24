@@ -32,13 +32,13 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
     {
       title: "Illustrate Mind Spark 2",
       description: "Turn ideas or quotes into illustrated social posts with text and art in one click.",
-      link: "https://mulerun.com/@Rhino/illustrate-mind-spark-2",
+      link: "https://mulerun.com/agents/7a3c7c0c-4778-49bd-9f87-7513c77b40e8",
       image: illustrateCase
     },
     {
       title: "Content Pilot AI",
       description: "Create platform-optimized social posts with hooks, CTAs, and hashtags in your brand voice.",
-      link: "https://mulerun.com/@cqplaquemh41i2k/content-pilot-ai",
+      link: "https://mulerun.com/agents/4d9b4916-1311-4716-ba98-3bba7d803df3",
       image: contentPilotCase
     }
   ];
