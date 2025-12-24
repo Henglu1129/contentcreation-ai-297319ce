@@ -6,8 +6,8 @@ const FeaturesGrid = () => {
       title: "Out of content ideas?",
       description: "How can I turn a vague thought into a full post — in seconds?",
       cards: [
-        { title: "Turn Idea to Visual", description: "No design skills? No problem. Stunning results in seconds.", hasButton: true, link: "https://mulerun.com/@Rhino/illustrate-mind-spark-2", imageIndex: 0 },
-        { title: "Write Copy", description: "Beat blank-page anxiety with on-brand, ready-to-use drafts.", hasButton: true, link: "https://mulerun.com/@cqplaquemh41i2k/content-pilot-ai", imageIndex: 1 },
+        { title: "Turn Idea to Visual", description: "No design skills? No problem. Stunning results in seconds.", hasButton: true, link: "https://mulerun.com/agents/7a3c7c0c-4778-49bd-9f87-7513c77b40e8", imageIndex: 0 },
+        { title: "Write Copy", description: "Beat blank-page anxiety with on-brand, ready-to-use drafts.", hasButton: true, link: "https://mulerun.com/agents/4d9b4916-1311-4716-ba98-3bba7d803df3", imageIndex: 1 },
       ],
       layout: "right",
     },
@@ -15,8 +15,8 @@ const FeaturesGrid = () => {
       title: "Creating content takes forever?",
       description: "How can I auto-generate videos, podcasts, and subtitles — without filming or editing?",
       cards: [
-        { title: "Make Shorts", description: "Auto-cut highlights that grab attention—perfect for social.", hasButton: true, link: "https://mulerun.com/@GrahamRabbb0e02/auto-short-video-creator", imageIndex: 2 },
-        { title: "Generate Podcast", description: "Natural voice, ready to publish in seconds.", hasButton: true, link: "https://mulerun.com/@AngryBerry/podcast-generator", imageIndex: 3 },
+        { title: "Make Shorts", description: "Auto-cut highlights that grab attention—perfect for social.", hasButton: true, link: "https://mulerun.com/agents/060c2d29-6d0f-41ef-aa16-bd4a000e1ef5", imageIndex: 2 },
+        { title: "Generate Podcast", description: "Natural voice, ready to publish in seconds.", hasButton: true, link: "https://mulerun.com/agents/427c5b36-2769-4358-a93d-1323ec7ce1a4", imageIndex: 3 },
         { title: "Translate Subtitles", description: "Accurate sync in 50+ languages—no editing needed.", hasButton: true, link: "https://mulerun.com/@Skynetbbb0bb3/subtitle-translate-ai-pro", imageIndex: 4 },
       ],
       layout: "left",
