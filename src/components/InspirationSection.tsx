@@ -83,7 +83,7 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
     {
       title: "YouTube Video to Social Content",
       description: "Turn YouTube videos into ready-to-post social content for X, LinkedIn, and Instagram.",
-      link: "https://mulerun.com/@YuTou_baby/youtube-video-to-social-content",
+      link: "https://mulerun.com/agents/9c9b03f0-41e8-4fbb-a99e-ac2f376dc24d",
       image: youtubeSocialContent
     }
   ];
