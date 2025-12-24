@@ -46,7 +46,7 @@ const HeroSection = () => {
         </div>
 
         <a 
-          href="https://mulerun.com/signup" 
+          href="https://mulerun.com/signin?continue=%2Fthemes%2Fcontentcreation-ai%2F" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-2.5 bg-primary text-primary-foreground px-4 py-2.5 rounded h-[52px] w-fit font-jetbrains font-bold text-lg md:text-xl hover:bg-primary/90 transition-colors"

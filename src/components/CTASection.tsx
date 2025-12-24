@@ -39,7 +39,7 @@ const CTASection = () => {
         </h2>
 
         <a 
-          href="https://mulerun.com/signup"
+          href="https://mulerun.com/signin?continue=%2Fthemes%2Fcontentcreation-ai%2F"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-foreground text-card px-6 py-3 rounded font-jetbrains font-bold text-sm uppercase inline-flex items-center gap-2 mx-auto hover:bg-foreground/90 transition-colors"
