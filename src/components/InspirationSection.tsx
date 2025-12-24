@@ -209,7 +209,7 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
 
 const InspirationSection = () => {
   return (
-    <section className="py-12 md:py-20 bg-background">
+    <section id="out-of-content-ideas" className="py-12 md:py-20 bg-background">
       <div className="max-w-[1300px] mx-auto px-4 md:px-[60px]">
         {[0, 1, 2, 3].map((index) => (
           <InspirationBlock key={index} blockIndex={index} />
