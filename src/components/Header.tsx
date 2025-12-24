@@ -83,7 +83,7 @@ const Header = () => {
           BE A CREATOR
         </a>
         <a 
-          href={isLoggedIn ? "https://mulerun.com/agent-store" : "https://mulerun.com/signup"}
+          href={isLoggedIn ? "https://mulerun.com/agent-store" : "https://mulerun.com/signin?continue=%2Fthemes%2Fcontentcreation-ai%2F"}
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2.5 rounded font-jetbrains font-bold text-sm uppercase tracking-tight hover:bg-primary/90 transition-colors"
@@ -146,7 +146,7 @@ const Header = () => {
               BE A CREATOR
             </a>
             <a 
-              href={isLoggedIn ? "https://mulerun.com/agent-store" : "https://mulerun.com/signup"}
+              href={isLoggedIn ? "https://mulerun.com/agent-store" : "https://mulerun.com/signin?continue=%2Fthemes%2Fcontentcreation-ai%2F"}
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2.5 rounded font-jetbrains font-bold text-sm uppercase tracking-tight hover:bg-primary/90 transition-colors w-fit"
