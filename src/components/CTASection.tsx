@@ -1,6 +1,32 @@
 import { ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+
+// Helper function to get cookie value by name
+const getCookie = (name: string): string | null => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
+  return null;
+};
 
 const CTASection = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = getCookie('token');
+    setIsLoggedIn(!!token);
+  }, []);
+
+  const handleCTAClick = (e: React.MouseEvent) => {
+    if (isLoggedIn) {
+      e.preventDefault();
+      const section = document.getElementById('out-of-content-ideas');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section className="bg-cyan py-12 md:py-20 px-4 md:px-[120px] relative overflow-hidden">
       {/* Background decorative elements */}
@@ -39,12 +65,13 @@ const CTASection = () => {
         </h2>
 
         <a 
-          href="https://mulerun.com/signin?continue=%2Fthemes%2Fcontentcreation-ai%2F"
-          target="_blank"
-          rel="noopener noreferrer"
+          href={isLoggedIn ? "#out-of-content-ideas" : "https://mulerun.com/signin?continue=%2Fthemes%2Fcontentcreation-ai%2F"}
+          onClick={handleCTAClick}
+          target={isLoggedIn ? undefined : "_blank"}
+          rel={isLoggedIn ? undefined : "noopener noreferrer"}
           className="bg-foreground text-card px-6 py-3 rounded font-jetbrains font-bold text-sm uppercase inline-flex items-center gap-2 mx-auto hover:bg-foreground/90 transition-colors"
         >
-          Sign Up for Free
+          {isLoggedIn ? "Run it now!" : "Sign Up for Free"}
           <ArrowRight className="w-5 h-5" />
         </a>
 
