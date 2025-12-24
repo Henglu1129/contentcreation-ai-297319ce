@@ -47,19 +47,19 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
     {
       title: "Auto Short Video Creator",
       description: "Turn captions into 140-second cinematic shorts with script, voiceover, and visuals.",
-      link: "https://mulerun.com/@GrahamRabbb0e02/auto-short-video-creator",
+      link: "https://mulerun.com/agents/060c2d29-6d0f-41ef-aa16-bd4a000e1ef5",
       image: showcase1
     },
     {
       title: "Podcast Generator",
       description: "Convert text into multi-speaker podcast audio in 10 languages—no mic needed.",
-      link: "https://mulerun.com/@AngryBerry/podcast-generator",
+      link: "https://mulerun.com/agents/427c5b36-2769-4358-a93d-1323ec7ce1a4",
       image: podcastCover
     },
     {
       title: "Subtitle Translate AI Pro",
       description: "Translate subtitles naturally while preserving tone, timing, and meaning across languages.",
-      link: "https://mulerun.com/@Skynetbbb0bb3/subtitle-translate-ai-pro",
+      link: "https://mulerun.com/agents/b051b2ff-4f2e-423c-8175-bb74d23ce607",
       image: subtitleTranslate,
       imagePosition: "object-top"
     }
