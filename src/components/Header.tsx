@@ -1,9 +1,23 @@
 import { ArrowRight, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import mulerunLogo from "@/assets/logo-icon.png";
+
+// Helper function to get cookie value by name
+const getCookie = (name: string): string | null => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
+  return null;
+};
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = getCookie('token');
+    setIsLoggedIn(!!token);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-[120px] py-4 h-20 bg-background border-b border-border/20">
@@ -69,12 +83,12 @@ const Header = () => {
           BE A CREATOR
         </a>
         <a 
-          href="https://mulerun.com/signup" 
+          href={isLoggedIn ? "https://mulerun.com/agent-store" : "https://mulerun.com/signup"}
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2.5 rounded font-jetbrains font-bold text-sm uppercase tracking-tight hover:bg-primary/90 transition-colors"
         >
-          Sign Up
+          {isLoggedIn ? "Explore" : "Sign Up"}
           <ArrowRight className="w-5 h-5" />
         </a>
       </div>
@@ -132,12 +146,12 @@ const Header = () => {
               BE A CREATOR
             </a>
             <a 
-              href="https://mulerun.com/signup" 
+              href={isLoggedIn ? "https://mulerun.com/agent-store" : "https://mulerun.com/signup"}
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2.5 rounded font-jetbrains font-bold text-sm uppercase tracking-tight hover:bg-primary/90 transition-colors w-fit"
             >
-              Sign Up
+              {isLoggedIn ? "Explore" : "Sign Up"}
               <ArrowRight className="w-5 h-5" />
             </a>
           </nav>
