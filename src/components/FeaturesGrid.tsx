@@ -32,7 +32,7 @@ const FeaturesGrid = () => {
     },
     {
       title: "Video to Polished Output",
-      description: "How can I turn raw video into a polished, globally ready output — with perfect subtitles in 50+ languages?",
+      description: "Turn raw video into global-ready content—with perfect multilingual subtitles.",
       cards: [
         { title: "Translate Subtitles", description: "Accurate sync in 50+ languages—no editing needed.", hasButton: true, link: "https://mulerun.com/agents/9c9b03f0-41e8-4fbb-a99e-ac2f376dc24d", imageIndex: 16 },
       ],
