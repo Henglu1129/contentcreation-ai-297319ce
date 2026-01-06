@@ -40,7 +40,7 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
     },
     {
       title: "Shorts Script Factory",
-      description: "Instantly turn ideas into high-retention Shorts & Reels—with hooks, visuals, CTAs, and hashtags—no editing needed.",
+      description: "Turn ideas into scroll-stopping Shorts & Reels—instantly, no editing. Everything included.",
       link: "https://mulerun.com/agents/2d7a8a1b-4257-4cab-93e5-d790fe1ff807",
       image: shortsScriptFactory
     },
