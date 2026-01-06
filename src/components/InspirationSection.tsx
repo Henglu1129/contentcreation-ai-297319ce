@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronsRight } from "lucide-react";
+import viralScriptHumanizer from "@/assets/viral-script-humanizer.jpg";
 import illustrateCase from "@/assets/illustrate-case.webp";
 import contentPilotCase from "@/assets/content-pilot-case.webp";
 import showcase1 from "@/assets/showcase-1.webp";
@@ -30,10 +31,10 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
 
   const defaultTools: Tool[] = [
     {
-      title: "Illustrate Mind Spark 2",
-      description: "Turn ideas or quotes into illustrated social posts with text and art in one click.",
-      link: "https://mulerun.com/agents/7a3c7c0c-4778-49bd-9f87-7513c77b40e8",
-      image: illustrateCase
+      title: "Viral Script Humanizer",
+      description: "Transform AI drafts into punchy, viral-ready video scripts—no robotic tone, just real talk.",
+      link: "https://mulerun.com/agents/a63716fe-8230-49c7-8ea3-a9c1846e5e5c",
+      image: viralScriptHumanizer
     },
     {
       title: "Content Pilot AI",
