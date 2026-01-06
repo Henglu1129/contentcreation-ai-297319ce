@@ -92,7 +92,7 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     fallbackAvatar: creatorCard6Avatar
   },
   "utU3OsLYWnM": {
-    rating: 9.3,
+    rating: 9.5,
     stars: 4.5,
     description: "Discover how AI automation can transform your content creation process and save you hours of work!",
     fallbackAvatar: creatorGet365AI
