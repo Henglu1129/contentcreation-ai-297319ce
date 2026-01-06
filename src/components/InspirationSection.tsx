@@ -16,6 +16,7 @@ import idea2clipVlog from "@/assets/idea2clip-vlog.jpg";
 import subtitleTranslatePro from "@/assets/subtitle-translate-pro.jpg";
 import youtubeSocialContent from "@/assets/youtube-social-content.webp";
 import youtubeAwesomeThumbnail from "@/assets/youtube-awesome-thumbnail.jpg";
+import hyper3dAiRodin from "@/assets/hyper3d-ai-rodin.jpg";
 
 interface Tool {
   title: string;
@@ -108,10 +109,10 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
 
   const section6Tools: Tool[] = [
     {
-      title: "Subtitle Translate AI Pro",
-      description: "Translate subtitles naturally while preserving tone, timing, and meaning across languages.",
-      link: "https://mulerun.com/agents/b051b2ff-4f2e-423c-8175-bb74d23ce607",
-      image: subtitleTranslatePro
+      title: "HYPER3D_AI_RODIN",
+      description: "Create high-quality 3D assets from prompts or photos—for games, AR, e-commerce.",
+      link: "https://mulerun.com/agents/1415aefb-3010-4e61-baaa-6ca86dfe0951",
+      image: hyper3dAiRodin
     }
   ];
 
