@@ -323,9 +323,9 @@ const CreatorBreakoutSection = () => {
         {/* First Row - Auto-scrolling Marquee */}
         {!loading && !error && cards.length > 0 && (
           <>
-            <div className="overflow-hidden mb-6">
+            <div className="overflow-hidden mb-6 group/marquee">
               <div 
-                className="flex gap-6 hover:[animation-play-state:paused]"
+                className="flex gap-6 group-hover/marquee:[animation-play-state:paused]"
                 style={{ 
                   width: 'max-content',
                   animation: 'marquee 45s linear infinite'
