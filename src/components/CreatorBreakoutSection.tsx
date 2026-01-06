@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Play, Star, Users, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import creatorUmutAktu from "@/assets/creator-umut-aktu.jpg";
@@ -43,8 +43,7 @@ const VIDEO_IDS = [
   "RxXvya5v5Lw",
   "HrKjPC_Racg",
   "2FugAplwawk",
-  "zc9mdszta3A",
-  "utU3OsLYWnM"
+  "zc9mdszta3A"
 ];
 
 // Static data for ratings and descriptions (not available from YouTube API)
@@ -84,12 +83,6 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     stars: 4.25,
     description: "Learn how to automate your content creation workflow with MuleRun AI agents - save hours of work every day!",
     fallbackAvatar: creatorCard6Avatar
-  },
-  "utU3OsLYWnM": {
-    rating: 9.3,
-    stars: 4.5,
-    description: "Discover the power of AI automation for content creators - transform your workflow and boost productivity!",
-    fallbackAvatar: creatorCard5
   }
 };
 
@@ -314,83 +307,12 @@ const CreatorBreakoutSection = () => {
           </div>
         )}
 
-        {/* First Row - Auto-scrolling */}
+        {/* Cards Grid */}
         {!loading && !error && cards.length > 0 && (
-          <div className="mb-6 overflow-hidden">
-            <div 
-              className="flex gap-6 animate-scroll-right"
-              style={{
-                width: 'max-content',
-              }}
-            >
-              {/* Original cards + duplicates for seamless loop */}
-              {[...cards.slice(0, 4), ...cards.slice(0, 4), ...cards.slice(0, 4)].map((card, index) => (
-                <div key={index} className="w-[calc(33.333vw-2rem)] min-w-[320px] max-w-[400px] flex-shrink-0">
-                  <CreatorCard card={card} />
-                </div>
-              ))}
-              {/* 3 Placeholder cards */}
-              {[1, 2, 3].map((i) => (
-                <div key={`placeholder-${i}`} className="w-[calc(33.333vw-2rem)] min-w-[320px] max-w-[400px] flex-shrink-0">
-                  <div className="bg-background rounded-lg overflow-hidden shadow-sm border border-border/50">
-                    <div className="aspect-video bg-muted"></div>
-                    <div className="p-4">
-                      <div className="h-5 bg-muted rounded w-3/4 mb-3"></div>
-                      <div className="flex items-center gap-2 mb-3">
-                        <div className="w-8 h-8 rounded-full bg-muted"></div>
-                        <div>
-                          <div className="h-4 bg-muted rounded w-20 mb-1"></div>
-                          <div className="h-3 bg-muted rounded w-16"></div>
-                        </div>
-                      </div>
-                      <div className="h-4 bg-muted rounded w-1/2 mb-3"></div>
-                      <div className="h-10 bg-muted rounded w-full mb-4"></div>
-                      <div className="h-3 bg-muted rounded w-full"></div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Second Row - Auto-scrolling */}
-        {!loading && !error && cards.length > 3 && (
-          <div className="overflow-hidden">
-            <div 
-              className="flex gap-6 animate-scroll-left"
-              style={{
-                width: 'max-content',
-              }}
-            >
-              {/* Original cards + duplicates for seamless loop */}
-              {[...cards.slice(3), ...cards.slice(3), ...cards.slice(3)].map((card, index) => (
-                <div key={index} className="w-[calc(33.333vw-2rem)] min-w-[320px] max-w-[400px] flex-shrink-0">
-                  <CreatorCard card={card} />
-                </div>
-              ))}
-              {/* 3 Placeholder cards */}
-              {[1, 2, 3].map((i) => (
-                <div key={`placeholder-row2-${i}`} className="w-[calc(33.333vw-2rem)] min-w-[320px] max-w-[400px] flex-shrink-0">
-                  <div className="bg-background rounded-lg overflow-hidden shadow-sm border border-border/50">
-                    <div className="aspect-video bg-muted"></div>
-                    <div className="p-4">
-                      <div className="h-5 bg-muted rounded w-3/4 mb-3"></div>
-                      <div className="flex items-center gap-2 mb-3">
-                        <div className="w-8 h-8 rounded-full bg-muted"></div>
-                        <div>
-                          <div className="h-4 bg-muted rounded w-20 mb-1"></div>
-                          <div className="h-3 bg-muted rounded w-16"></div>
-                        </div>
-                      </div>
-                      <div className="h-4 bg-muted rounded w-1/2 mb-3"></div>
-                      <div className="h-10 bg-muted rounded w-full mb-4"></div>
-                      <div className="h-3 bg-muted rounded w-full"></div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cards.map((card, index) => (
+              <CreatorCard key={index} card={card} />
+            ))}
           </div>
         )}
       </div>
