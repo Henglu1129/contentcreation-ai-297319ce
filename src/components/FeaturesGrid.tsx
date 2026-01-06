@@ -6,7 +6,7 @@ const FeaturesGrid = () => {
       title: "Idea to Text",
       description: "How can I turn a half-baked idea into scroll-stopping content — without sounding like a robot?",
       cards: [
-        { title: "Turn Idea to Visual", description: "Make your AI writing sound like you.", hasButton: true, link: "https://mulerun.com/agents/7a3c7c0c-4778-49bd-9f87-7513c77b40e8", imageIndex: 0 },
+        { title: "Humanize Scripts", description: "Make your AI writing sound like you.", hasButton: true, link: "https://mulerun.com/agents/7a3c7c0c-4778-49bd-9f87-7513c77b40e8", imageIndex: 0 },
         { title: "Write Copy", description: "Beat blank-page anxiety with on-brand, ready-to-use drafts.", hasButton: true, link: "https://mulerun.com/agents/4d9b4916-1311-4716-ba98-3bba7d803df3", imageIndex: 1 },
         { title: "Humanize Scripts", description: "Strip the robot talk. Inject real voice, hooks, and flow into any AI draft—instantly.", hasButton: true, link: "#", imageIndex: 0 },
         { title: "New Feature 2", description: "Placeholder description for new feature.", hasButton: true, link: "#", imageIndex: 1 },
