@@ -31,8 +31,8 @@ const FeaturesGrid = () => {
       layout: "right",
     },
     {
-      title: "Posting to just one platform?",
-      description: "How can I repurpose one video into posts for all social platforms — instantly?",
+      title: "Video to Polished Output",
+      description: "How can I turn raw video into a polished, globally ready output — with perfect subtitles in 50+ languages?",
       cards: [
         { title: "Repurpose Content", description: "One piece, everywhere—zero rework.", hasButton: true, link: "https://mulerun.com/agents/9c9b03f0-41e8-4fbb-a99e-ac2f376dc24d", imageIndex: 7 },
       ],
