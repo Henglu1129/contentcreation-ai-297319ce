@@ -17,7 +17,7 @@ const FeaturesGrid = () => {
       title: "Text to Audio",
       description: "How can I turn plain text into rich, human-sounding audio — instantly and without a mic?",
       cards: [
-        { title: "Generate Voiceovers", description: "Turn text into human-sounding voice—no mic needed.", hasButton: true, link: "https://mulerun.com/agents/060c2d29-6d0f-41ef-aa16-bd4a000e1ef5", imageIndex: 14 },
+        { title: "Generate Voiceovers", description: "Turn text into human-sounding voice—no mic needed.", hasButton: true, link: "https://mulerun.com/agents/ab828ed6-bcea-4f0a-8c95-5348cd58c85a", imageIndex: 14 },
         { title: "Generate Podcast", description: "Natural voice, ready to publish in seconds.", hasButton: true, link: "https://mulerun.com/agents/427c5b36-2769-4358-a93d-1323ec7ce1a4", imageIndex: 3 },
       ],
       layout: "left",
