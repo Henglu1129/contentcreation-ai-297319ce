@@ -40,14 +40,15 @@ interface YouTubeVideoInfo {
   subscriberCount: string;
 }
 
-// Video IDs to fetch - first 6 are for carousel (first row), last 3 for grid (second row)
+// Video IDs to fetch - first 7 are for carousel (first row), last 3 for grid (second row)
 const CAROUSEL_VIDEO_IDS = [
   "m8brjPr23j4",
   "ygJsgrrUUH0", 
   "RxXvya5v5Lw",
   "utU3OsLYWnM",
   "dZwjGj5Z9a8",
-  "l6TDxq98Q1M"  // New video
+  "l6TDxq98Q1M",
+  "Nr_SQOeN43I"  // New video
 ];
 
 const GRID_VIDEO_IDS = [
@@ -113,6 +114,12 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     stars: 4.15,
     description: "Discover AI-powered content creation tools that can transform your workflow!",
     fallbackAvatar: creatorWincash
+  },
+  "Nr_SQOeN43I": {
+    rating: 9.2,
+    stars: 4.25,
+    description: "Learn how AI agents can help automate your content creation and boost productivity!",
+    fallbackAvatar: creatorCard6Avatar
   }
 };
 
@@ -346,13 +353,13 @@ const CreatorBreakoutSection = () => {
                 style={{ width: 'max-content' }}
               >
                 {/* First set of cards */}
-                {cards.slice(0, 6).map((card, index) => (
+                {cards.slice(0, 7).map((card, index) => (
                   <div key={index} className="w-[calc((100vw-48px)/1)] md:w-[calc((100vw-72px)/2)] lg:w-[calc((1280px-48px)/3)] flex-shrink-0">
                     <CreatorCard card={card} />
                   </div>
                 ))}
                 {/* Duplicate for seamless loop */}
-                {cards.slice(0, 6).map((card, index) => (
+                {cards.slice(0, 7).map((card, index) => (
                   <div key={`dup-${index}`} className="w-[calc((100vw-48px)/1)] md:w-[calc((100vw-72px)/2)] lg:w-[calc((1280px-48px)/3)] flex-shrink-0">
                     <CreatorCard card={card} />
                   </div>
@@ -362,8 +369,8 @@ const CreatorBreakoutSection = () => {
             
             {/* Second Row - Static Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {cards.slice(6).map((card, index) => (
-                <CreatorCard key={index + 6} card={card} />
+              {cards.slice(7).map((card, index) => (
+                <CreatorCard key={index + 7} card={card} />
               ))}
             </div>
           </>
