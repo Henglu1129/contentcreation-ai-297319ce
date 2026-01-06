@@ -18,11 +18,25 @@
   }
 }
 
+@keyframes scroll-left {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .animate-scroll-right {
   animation: scroll-right 45s linear infinite;
 }
 
-.animate-scroll-right:hover {
+.animate-scroll-left {
+  animation: scroll-left 45s linear infinite;
+}
+
+.animate-scroll-right:hover,
+.animate-scroll-left:hover {
   animation-play-state: paused;
 }
 @tailwind components;

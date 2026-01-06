@@ -325,27 +325,20 @@ const CreatorBreakoutSection = () => {
               {/* 4 Placeholder cards */}
               {[1, 2, 3, 4].map((i) => (
                 <div key={`placeholder-${i}`} className="w-[calc(33.333vw-2rem)] min-w-[320px] max-w-[400px] flex-shrink-0">
-                  <div className="bg-background rounded-lg overflow-hidden shadow-sm border-2 border-dashed border-primary/50">
-                    <div className="aspect-video bg-primary/10 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-primary/20 flex items-center justify-center">
-                          <Play className="w-6 h-6 text-primary" />
-                        </div>
-                        <span className="text-primary font-medium">占位 {i}</span>
-                      </div>
-                    </div>
+                  <div className="bg-background rounded-lg overflow-hidden shadow-sm border border-border/50">
+                    <div className="aspect-video bg-muted"></div>
                     <div className="p-4">
-                      <div className="h-5 bg-primary/20 rounded w-3/4 mb-3"></div>
+                      <div className="h-5 bg-muted rounded w-3/4 mb-3"></div>
                       <div className="flex items-center gap-2 mb-3">
-                        <div className="w-8 h-8 rounded-full bg-primary/20"></div>
+                        <div className="w-8 h-8 rounded-full bg-muted"></div>
                         <div>
-                          <div className="h-4 bg-primary/20 rounded w-20 mb-1"></div>
-                          <div className="h-3 bg-primary/20 rounded w-16"></div>
+                          <div className="h-4 bg-muted rounded w-20 mb-1"></div>
+                          <div className="h-3 bg-muted rounded w-16"></div>
                         </div>
                       </div>
-                      <div className="h-4 bg-primary/20 rounded w-1/2 mb-3"></div>
-                      <div className="h-10 bg-primary/20 rounded w-full mb-4"></div>
-                      <div className="h-3 bg-primary/20 rounded w-full"></div>
+                      <div className="h-4 bg-muted rounded w-1/2 mb-3"></div>
+                      <div className="h-10 bg-muted rounded w-full mb-4"></div>
+                      <div className="h-3 bg-muted rounded w-full"></div>
                     </div>
                   </div>
                 </div>
@@ -354,12 +347,43 @@ const CreatorBreakoutSection = () => {
           </div>
         )}
 
-        {/* Second Row - Static */}
+        {/* Second Row - Auto-scrolling */}
         {!loading && !error && cards.length > 3 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cards.slice(3).map((card, index) => (
-              <CreatorCard key={index} card={card} />
-            ))}
+          <div className="overflow-hidden">
+            <div 
+              className="flex gap-6 animate-scroll-left"
+              style={{
+                width: 'max-content',
+              }}
+            >
+              {/* Original cards + duplicates for seamless loop */}
+              {[...cards.slice(3), ...cards.slice(3), ...cards.slice(3)].map((card, index) => (
+                <div key={index} className="w-[calc(33.333vw-2rem)] min-w-[320px] max-w-[400px] flex-shrink-0">
+                  <CreatorCard card={card} />
+                </div>
+              ))}
+              {/* 3 Placeholder cards */}
+              {[1, 2, 3].map((i) => (
+                <div key={`placeholder-row2-${i}`} className="w-[calc(33.333vw-2rem)] min-w-[320px] max-w-[400px] flex-shrink-0">
+                  <div className="bg-background rounded-lg overflow-hidden shadow-sm border border-border/50">
+                    <div className="aspect-video bg-muted"></div>
+                    <div className="p-4">
+                      <div className="h-5 bg-muted rounded w-3/4 mb-3"></div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className="w-8 h-8 rounded-full bg-muted"></div>
+                        <div>
+                          <div className="h-4 bg-muted rounded w-20 mb-1"></div>
+                          <div className="h-3 bg-muted rounded w-16"></div>
+                        </div>
+                      </div>
+                      <div className="h-4 bg-muted rounded w-1/2 mb-3"></div>
+                      <div className="h-10 bg-muted rounded w-full mb-4"></div>
+                      <div className="h-3 bg-muted rounded w-full"></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
