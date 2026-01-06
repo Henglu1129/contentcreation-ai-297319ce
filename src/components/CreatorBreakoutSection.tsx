@@ -10,6 +10,7 @@ import creatorCard6Avatar from "@/assets/creator-card6-avatar.jpg";
 import creatorGet365AI from "@/assets/creator-get365ai.jpg";
 import creatorMetaverseGuy from "@/assets/creator-metaverse-guy.jpg";
 import creatorMulerunGroup from "@/assets/creator-mulerun-group.png";
+import creatorWincash from "@/assets/creator-wincash.jpg";
 
 interface CreatorCard {
   thumbnail: string;
@@ -111,7 +112,7 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     rating: 9.1,
     stars: 4.15,
     description: "Discover AI-powered content creation tools that can transform your workflow!",
-    fallbackAvatar: creatorMulerunGroup
+    fallbackAvatar: creatorWincash
   }
 };
 
