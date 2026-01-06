@@ -77,12 +77,6 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
 
   const section3Tools: Tool[] = [
     {
-      title: "YouTube Title Generator with Emojis",
-      description: "Generate 5 viral, emoji-rich YouTube titles with SEO hooks in seconds.",
-      link: "https://mulerun.com/agents/f350d285-6795-4f94-97d9-2c9308b06b93",
-      image: youtubeTitleGenerator
-    },
-    {
       title: "YouTube Awesome Thumbnail",
       description: "Generate bold, face-focused YouTube thumbnails with integrated titles for high CTR.",
       link: "https://mulerun.com/agents/01045f00-c02f-46eb-951b-8752bb5a6f12",
