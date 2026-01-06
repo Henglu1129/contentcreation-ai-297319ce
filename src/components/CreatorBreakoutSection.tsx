@@ -59,7 +59,8 @@ const GRID_VIDEO_IDS = [
   "2FugAplwawk",
   "zc9mdszta3A",
   "w8OsJkfYgLw",
-  "g3UIOlhYz9w"  // New video
+  "g3UIOlhYz9w",
+  "Xu5kFtuTaV8"  // New video
 ];
 
 const VIDEO_IDS = [...CAROUSEL_VIDEO_IDS, ...GRID_VIDEO_IDS];
@@ -137,6 +138,12 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     stars: 4.25,
     description: "Discover how AI can streamline your creative process and boost your productivity!",
     fallbackAvatar: creatorNafay3D
+  },
+  "Xu5kFtuTaV8": {
+    rating: 9.2,
+    stars: 4.25,
+    description: "Learn how to leverage AI agents for maximum content creation efficiency!",
+    fallbackAvatar: creatorCard6Avatar
   }
 };
 
