@@ -11,6 +11,7 @@ import creatorGet365AI from "@/assets/creator-get365ai.jpg";
 import creatorMetaverseGuy from "@/assets/creator-metaverse-guy.jpg";
 import creatorMulerunGroup from "@/assets/creator-mulerun-group.png";
 import creatorWincash from "@/assets/creator-wincash.jpg";
+import creatorBruceDark from "@/assets/creator-bruce-dark.jpg";
 
 interface CreatorCard {
   thumbnail: string;
@@ -116,10 +117,10 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     fallbackAvatar: creatorWincash
   },
   "Nr_SQOeN43I": {
-    rating: 9.2,
-    stars: 4.25,
+    rating: 9.1,
+    stars: 4.15,
     description: "Learn how AI agents can help automate your content creation and boost productivity!",
-    fallbackAvatar: creatorCard6Avatar
+    fallbackAvatar: creatorBruceDark
   }
 };
 
