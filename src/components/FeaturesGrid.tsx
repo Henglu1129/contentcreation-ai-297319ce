@@ -3,8 +3,8 @@ import FeatureCard from "./FeatureCard";
 const FeaturesGrid = () => {
   const sections = [
     {
-      title: "Out of content ideas?",
-      description: "How can I turn a vague thought into a full post — in seconds?",
+      title: "Idea to Text",
+      description: "How can I turn a half-baked idea into scroll-stopping content — without sounding like a robot?",
       cards: [
         { title: "Turn Idea to Visual", description: "No design skills? No problem. Stunning results in seconds.", hasButton: true, link: "https://mulerun.com/agents/7a3c7c0c-4778-49bd-9f87-7513c77b40e8", imageIndex: 0 },
         { title: "Write Copy", description: "Beat blank-page anxiety with on-brand, ready-to-use drafts.", hasButton: true, link: "https://mulerun.com/agents/4d9b4916-1311-4716-ba98-3bba7d803df3", imageIndex: 1 },
