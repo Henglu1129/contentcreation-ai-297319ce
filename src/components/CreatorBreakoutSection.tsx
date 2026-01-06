@@ -12,6 +12,7 @@ import creatorMetaverseGuy from "@/assets/creator-metaverse-guy.jpg";
 import creatorMulerunGroup from "@/assets/creator-mulerun-group.png";
 import creatorWincash from "@/assets/creator-wincash.jpg";
 import creatorBruceDark from "@/assets/creator-bruce-dark.jpg";
+import creatorHiveCorp from "@/assets/creator-hive-corp.jpg";
 
 interface CreatorCard {
   thumbnail: string;
@@ -124,10 +125,10 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     fallbackAvatar: creatorBruceDark
   },
   "w8OsJkfYgLw": {
-    rating: 9.2,
-    stars: 4.25,
+    rating: 9.1,
+    stars: 4.15,
     description: "Explore the power of AI automation and how it can revolutionize your workflow!",
-    fallbackAvatar: creatorCard6Avatar
+    fallbackAvatar: creatorHiveCorp
   }
 };
 
