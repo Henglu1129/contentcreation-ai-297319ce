@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { ChevronsRight } from "lucide-react";
-import viralScriptHumanizer from "@/assets/viral-script-humanizer.jpg";
-import shortsScriptFactory from "@/assets/shorts-script-factory.jpg";
 import illustrateCase from "@/assets/illustrate-case.webp";
-import redditToYoutube from "@/assets/reddit-to-youtube.jpg";
 import contentPilotCase from "@/assets/content-pilot-case.webp";
-import viralShortsAiArchitect from "@/assets/viral-shorts-ai-architect.jpg";
 import showcase1 from "@/assets/showcase-1.webp";
 import podcastCover from "@/assets/podcast-cover.webp";
 import subtitleTranslate from "@/assets/subtitle-translate.jpg";
@@ -22,8 +18,8 @@ interface Tool {
 }
 
 const sectionTitles = [
-  "From draft to viral—<br />in one click.",
-  "Text to voice.<br />Human, fast.",
+  "When inspiration strikes—<br />create instantly",
+  "You're the creator—<br />and the crew",
   "Great content deserves<br />great attention",
   "One piece.<br />Every platform."
 ];
@@ -34,28 +30,16 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
 
   const defaultTools: Tool[] = [
     {
-      title: "Viral Script Humanizer",
-      description: "Transform AI drafts into punchy, viral-ready video scripts—no robotic tone, just real talk.",
-      link: "https://mulerun.com/agents/a63716fe-8230-49c7-8ea3-a9c1846e5e5c",
-      image: viralScriptHumanizer
+      title: "Illustrate Mind Spark 2",
+      description: "Turn ideas or quotes into illustrated social posts with text and art in one click.",
+      link: "https://mulerun.com/agents/7a3c7c0c-4778-49bd-9f87-7513c77b40e8",
+      image: illustrateCase
     },
     {
-      title: "Shorts Script Factory",
-      description: "Turn ideas into scroll-stopping Shorts & Reels—instantly, no editing. Everything included.",
-      link: "https://mulerun.com/agents/2d7a8a1b-4257-4cab-93e5-d790fe1ff807",
-      image: shortsScriptFactory
-    },
-    {
-      title: "Reddit to YouTube Script - laughing_code",
-      description: "Reddit thread → polished script, SEO title, thumbnail prompt. Auto. No edit.",
-      link: "https://mulerun.com/agents/0cfa5d63-8037-4690-820c-b1d3f2a43d7f",
-      image: redditToYoutube
-    },
-    {
-      title: "Viral Shorts AI Architect",
-      description: "Remix hits. Make consistent AI videos. Get T2I + I2V prompts—in one click.",
-      link: "https://mulerun.com/agents/03d920f7-6199-4bd0-9379-5fac38051523",
-      image: viralShortsAiArchitect
+      title: "Content Pilot AI",
+      description: "Create platform-optimized social posts with hooks, CTAs, and hashtags in your brand voice.",
+      link: "https://mulerun.com/agents/4d9b4916-1311-4716-ba98-3bba7d803df3",
+      image: contentPilotCase
     }
   ];
 

@@ -307,39 +307,12 @@ const CreatorBreakoutSection = () => {
           </div>
         )}
 
-        {/* Cards Grid with side overflow cards */}
+        {/* Cards Grid */}
         {!loading && !error && cards.length > 0 && (
-          <div className="relative">
-            {/* Left overflow cards - hidden on mobile */}
-            <div className="hidden lg:block absolute right-full top-0 w-[280px] mr-6 space-y-6">
-              {/* Top left partial card */}
-              <div className="translate-x-1/2 opacity-60">
-                <CreatorCard card={cards[0]} />
-              </div>
-              {/* Bottom left partial card */}
-              <div className="translate-x-1/3 opacity-40">
-                <CreatorCard card={cards[1]} />
-              </div>
-            </div>
-
-            {/* Right overflow cards - hidden on mobile */}
-            <div className="hidden lg:block absolute left-full top-0 w-[280px] ml-6 space-y-6">
-              {/* Top right partial card */}
-              <div className="-translate-x-1/2 opacity-60">
-                <CreatorCard card={cards[2]} />
-              </div>
-              {/* Bottom right partial card */}
-              <div className="-translate-x-1/3 opacity-40">
-                <CreatorCard card={cards[3]} />
-              </div>
-            </div>
-
-            {/* Main grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {cards.map((card, index) => (
-                <CreatorCard key={index} card={card} />
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cards.map((card, index) => (
+              <CreatorCard key={index} card={card} />
+            ))}
           </div>
         )}
       </div>

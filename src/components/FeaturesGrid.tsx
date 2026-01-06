@@ -42,15 +42,15 @@ const FeaturesGrid = () => {
       title: "Content to Platform-Ready",
       description: "How can I turn raw content into scroll-stopping, platform-ready posts?",
       cards: [
-        { title: "Create Thumbnail", description: "High-CTR visuals, optimized and done in one click.", hasButton: true, link: "https://mulerun.com/agents/01045f00-c02f-46eb-951b-8752bb5a6f12", imageIndex: 17 },
+        { title: "Make Clips", description: "Your idea. Hollywood look. Zero effort.", hasButton: true, link: "https://mulerun.com/agents/ba4e7d42-4044-46cf-8bf8-b6fb752dd297", imageIndex: 15 },
       ],
       layout: "right",
     },
     {
-      title: "Idea to 3D Asset",
-      description: "How can I turn an idea into a production-ready 3D asset—in minutes, no modeling needed?",
+      title: "Video to Polished Output",
+      description: "How can I turn raw video into global-ready content—with perfect subtitles in any language?",
       cards: [
-        { title: "Generate 3D", description: "Your text. Your image. Real 3D. No modeling.", hasButton: true, link: "https://mulerun.com/agents/1415aefb-3010-4e61-baaa-6ca86dfe0951", imageIndex: 18 },
+        { title: "Translate Subtitles", description: "Accurate sync in 50+ languages—no editing needed.", hasButton: true, link: "https://mulerun.com/agents/b051b2ff-4f2e-423c-8175-bb74d23ce607", imageIndex: 16 },
       ],
       layout: "left",
     },
