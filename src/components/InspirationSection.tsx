@@ -7,6 +7,7 @@ import redditToYoutube from "@/assets/reddit-to-youtube.jpg";
 import contentPilotCase from "@/assets/content-pilot-case.webp";
 import viralShortsAiArchitect from "@/assets/viral-shorts-ai-architect.jpg";
 import showcase1 from "@/assets/showcase-1.webp";
+import textToSpeech from "@/assets/text-to-speech.jpg";
 import podcastCover from "@/assets/podcast-cover.webp";
 import subtitleTranslate from "@/assets/subtitle-translate.jpg";
 import youtubeTitleGenerator from "@/assets/youtube-title-generator.webp";
@@ -61,10 +62,10 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
 
   const section2Tools: Tool[] = [
     {
-      title: "Auto Short Video Creator",
-      description: "Turn captions into 140-second cinematic shorts with script, voiceover, and visuals.",
-      link: "https://mulerun.com/agents/060c2d29-6d0f-41ef-aa16-bd4a000e1ef5",
-      image: showcase1
+      title: "Text-to-speech",
+      description: "Lifelike multilingual voiceovers—in premium or cloned voices. One click. Ready to use.",
+      link: "https://mulerun.com/agents/ab828ed6-bcea-4f0a-8c95-5348cd58c85a",
+      image: textToSpeech
     },
     {
       title: "Podcast Generator",
