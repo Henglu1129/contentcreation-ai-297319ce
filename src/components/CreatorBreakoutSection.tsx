@@ -14,6 +14,7 @@ import creatorWincash from "@/assets/creator-wincash.jpg";
 import creatorBruceDark from "@/assets/creator-bruce-dark.jpg";
 import creatorHiveCorp from "@/assets/creator-hive-corp.jpg";
 import creatorNafay3D from "@/assets/creator-nafay-3d.jpg";
+import creatorLucroALucro from "@/assets/creator-lucro-a-lucro.jpg";
 
 interface CreatorCard {
   thumbnail: string;
@@ -143,7 +144,7 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     rating: 9.2,
     stars: 4.25,
     description: "Learn how to leverage AI agents for maximum content creation efficiency!",
-    fallbackAvatar: creatorCard6Avatar
+    fallbackAvatar: creatorLucroALucro
   }
 };
 
