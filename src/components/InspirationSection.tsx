@@ -23,7 +23,7 @@ interface Tool {
 
 const sectionTitles = [
   "From draft to viral—<br />in one click.",
-  "You're the creator—<br />and the crew",
+  "Text to voice.<br />Human, fast.",
   "Great content deserves<br />great attention",
   "One piece.<br />Every platform."
 ];
