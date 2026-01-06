@@ -43,7 +43,8 @@ const VIDEO_IDS = [
   "RxXvya5v5Lw",
   "HrKjPC_Racg",
   "2FugAplwawk",
-  "zc9mdszta3A"
+  "zc9mdszta3A",
+  "utU3OsLYWnM"
 ];
 
 // Static data for ratings and descriptions (not available from YouTube API)
@@ -83,6 +84,12 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     stars: 4.25,
     description: "Learn how to automate your content creation workflow with MuleRun AI agents - save hours of work every day!",
     fallbackAvatar: creatorCard6Avatar
+  },
+  "utU3OsLYWnM": {
+    rating: 9.3,
+    stars: 4.5,
+    description: "Discover the power of AI automation for content creators - transform your workflow and boost productivity!",
+    fallbackAvatar: creatorCard5
   }
 };
 
@@ -317,13 +324,13 @@ const CreatorBreakoutSection = () => {
               }}
             >
               {/* Original cards + duplicates for seamless loop */}
-              {[...cards.slice(0, 3), ...cards.slice(0, 3), ...cards.slice(0, 3)].map((card, index) => (
+              {[...cards.slice(0, 4), ...cards.slice(0, 4), ...cards.slice(0, 4)].map((card, index) => (
                 <div key={index} className="w-[calc(33.333vw-2rem)] min-w-[320px] max-w-[400px] flex-shrink-0">
                   <CreatorCard card={card} />
                 </div>
               ))}
-              {/* 4 Placeholder cards */}
-              {[1, 2, 3, 4].map((i) => (
+              {/* 3 Placeholder cards */}
+              {[1, 2, 3].map((i) => (
                 <div key={`placeholder-${i}`} className="w-[calc(33.333vw-2rem)] min-w-[320px] max-w-[400px] flex-shrink-0">
                   <div className="bg-background rounded-lg overflow-hidden shadow-sm border border-border/50">
                     <div className="aspect-video bg-muted"></div>
