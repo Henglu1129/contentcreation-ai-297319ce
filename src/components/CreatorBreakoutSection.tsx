@@ -55,7 +55,8 @@ const CAROUSEL_VIDEO_IDS = [
 const GRID_VIDEO_IDS = [
   "HrKjPC_Racg",
   "2FugAplwawk",
-  "zc9mdszta3A"
+  "zc9mdszta3A",
+  "w8OsJkfYgLw"  // New video
 ];
 
 const VIDEO_IDS = [...CAROUSEL_VIDEO_IDS, ...GRID_VIDEO_IDS];
@@ -121,6 +122,12 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     stars: 4.15,
     description: "Learn how AI agents can help automate your content creation and boost productivity!",
     fallbackAvatar: creatorBruceDark
+  },
+  "w8OsJkfYgLw": {
+    rating: 9.2,
+    stars: 4.25,
+    description: "Explore the power of AI automation and how it can revolutionize your workflow!",
+    fallbackAvatar: creatorCard6Avatar
   }
 };
 
