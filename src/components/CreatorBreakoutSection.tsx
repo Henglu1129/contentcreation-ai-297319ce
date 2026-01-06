@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
-import { Play, Star, Users, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Play, Star, Users, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 import creatorUmutAktu from "@/assets/creator-umut-aktu.jpg";
 import creatorPlanckMind from "@/assets/creator-planckmind.jpg";
 import creatorAIMoneyManiac from "@/assets/creator-card3.jpg";
@@ -312,23 +307,13 @@ const CreatorBreakoutSection = () => {
           </div>
         )}
 
-        {/* Cards Carousel */}
+        {/* Cards Grid */}
         {!loading && !error && cards.length > 0 && (
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4">
-              {cards.map((card, index) => (
-                <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <CreatorCard card={card} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cards.map((card, index) => (
+              <CreatorCard key={index} card={card} />
+            ))}
+          </div>
         )}
       </div>
     </section>
