@@ -23,8 +23,8 @@ const FeaturesGrid = () => {
       layout: "left",
     },
     {
-      title: "Great content, but no clicks?",
-      description: "How can I get scroll-stopping titles and thumbnails — that actually convert?",
+      title: "Text/Image/Video to Video",
+      description: "How can I turn text, images, or video into polished, cinematic Shorts — with zero editing skills?",
       cards: [
         { title: "Generate Title", description: "Scroll-stopping hooks tailored to your audience's interests.", hasButton: true, link: "https://mulerun.com/agents/f350d285-6795-4f94-97d9-2c9308b06b93", imageIndex: 5 },
         { title: "Create Thumbnail", description: "High-CTR visuals, optimized and done in one click.", hasButton: true, link: "https://mulerun.com/agents/01045f00-c02f-46eb-951b-8752bb5a6f12", imageIndex: 6 },
