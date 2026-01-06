@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronsRight } from "lucide-react";
 import viralScriptHumanizer from "@/assets/viral-script-humanizer.jpg";
+import shortsScriptFactory from "@/assets/shorts-script-factory.jpg";
 import illustrateCase from "@/assets/illustrate-case.webp";
 import contentPilotCase from "@/assets/content-pilot-case.webp";
 import showcase1 from "@/assets/showcase-1.webp";
@@ -37,10 +38,10 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
       image: viralScriptHumanizer
     },
     {
-      title: "Content Pilot AI",
-      description: "Create platform-optimized social posts with hooks, CTAs, and hashtags in your brand voice.",
-      link: "https://mulerun.com/agents/4d9b4916-1311-4716-ba98-3bba7d803df3",
-      image: contentPilotCase
+      title: "Shorts Script Factory",
+      description: "Instantly turn ideas into high-retention Shorts & Reels—with hooks, visuals, CTAs, and hashtags—no editing needed.",
+      link: "https://mulerun.com/agents/2d7a8a1b-4257-4cab-93e5-d790fe1ff807",
+      image: shortsScriptFactory
     },
     {
       title: "New Tool 3",
