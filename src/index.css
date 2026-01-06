@@ -164,10 +164,24 @@
   }
 }
 
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .animate-marquee {
   animation: marquee 45s linear infinite;
 }
 
-.group\/marquee:hover .animate-marquee {
+.animate-marquee-reverse {
+  animation: marquee-reverse 45s linear infinite;
+}
+
+.group\/marquee:hover .animate-marquee,
+.group\/marquee:hover .animate-marquee-reverse {
   animation-play-state: paused;
 }

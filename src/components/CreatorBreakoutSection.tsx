@@ -368,11 +368,25 @@ const CreatorBreakoutSection = () => {
               </div>
             </div>
             
-            {/* Second Row - Static Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {cards.slice(7).map((card, index) => (
-                <CreatorCard key={index + 7} card={card} />
-              ))}
+            {/* Second Row - Auto-scrolling Marquee (reverse direction) */}
+            <div className="overflow-hidden group/marquee">
+              <div 
+                className="flex gap-6 animate-marquee-reverse"
+                style={{ width: 'max-content' }}
+              >
+                {/* First set of cards */}
+                {cards.slice(7).map((card, index) => (
+                  <div key={index} className="w-[calc((100vw-48px)/1)] md:w-[calc((100vw-72px)/2)] lg:w-[calc((1280px-48px)/3)] flex-shrink-0">
+                    <CreatorCard card={card} />
+                  </div>
+                ))}
+                {/* Duplicate for seamless loop */}
+                {cards.slice(7).map((card, index) => (
+                  <div key={`dup-${index}`} className="w-[calc((100vw-48px)/1)] md:w-[calc((100vw-72px)/2)] lg:w-[calc((1280px-48px)/3)] flex-shrink-0">
+                    <CreatorCard card={card} />
+                  </div>
+                ))}
+              </div>
             </div>
           </>
         )}
