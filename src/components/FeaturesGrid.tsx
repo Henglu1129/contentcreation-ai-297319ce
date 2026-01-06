@@ -50,7 +50,7 @@ const FeaturesGrid = () => {
       title: "Idea to 3D Asset",
       description: "How can I turn an idea into a production-ready 3D asset—in minutes, no modeling needed?",
       cards: [
-        { title: "Translate Subtitles", description: "Accurate sync in 50+ languages—no editing needed.", hasButton: true, link: "https://mulerun.com/agents/b051b2ff-4f2e-423c-8175-bb74d23ce607", imageIndex: 16 },
+        { title: "Generate 3D", description: "Your text. Your image. Real 3D. No modeling.", hasButton: true, link: "https://mulerun.com/agents/1415aefb-3010-4e61-baaa-6ca86dfe0951", imageIndex: 18 },
       ],
       layout: "left",
     },
