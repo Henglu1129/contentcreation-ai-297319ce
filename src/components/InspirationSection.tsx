@@ -46,7 +46,7 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
     },
     {
       title: "Reddit to YouTube Script - laughing_code",
-      description: "Automatically transform raw Reddit threads into polished scripts, SEO titles, and thumbnail prompts—no editing required.",
+      description: "Turn raw Reddit threads into polished scripts, SEO titles, and thumbnail prompts—automatically, no editing needed.",
       link: "https://mulerun.com/agents/0cfa5d63-8037-4690-820c-b1d3f2a43d7f",
       image: redditToYoutube
     },
