@@ -31,7 +31,7 @@ const sectionTitles = [
   "Think it. Ship it.",
   "Subtitles that speak<br />like locals.",
   "Make them click.",
-  "Subtitles that speak<br />like locals."
+  "Prompt to 3D.<br />Instantly."
 ];
 
 const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
