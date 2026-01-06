@@ -29,7 +29,7 @@ const sectionTitles = [
   "Text to voice.<br />Human, fast.",
   "Think it. Ship it.",
   "Subtitles that speak<br />like locals.",
-  "Think it. Ship it.",
+  "Make them click.",
   "Subtitles that speak<br />like locals."
 ];
 
