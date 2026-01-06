@@ -153,3 +153,13 @@
     @apply bg-gradient-to-b from-foreground to-foreground/80 bg-clip-text text-transparent;
   }
 }
+
+/* Marquee animation for auto-scrolling cards */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

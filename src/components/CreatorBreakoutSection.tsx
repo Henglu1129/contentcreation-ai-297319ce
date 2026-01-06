@@ -1,7 +1,6 @@
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { Play, Star, Users, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import useEmblaCarousel from "embla-carousel-react";
 import creatorUmutAktu from "@/assets/creator-umut-aktu.jpg";
 import creatorPlanckMind from "@/assets/creator-planckmind.jpg";
 import creatorAIMoneyManiac from "@/assets/creator-card3.jpg";
@@ -230,26 +229,6 @@ const CreatorBreakoutSection = () => {
   const [cards, setCards] = useState<CreatorCard[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
-  // Embla carousel setup for first row
-  const [emblaRef, emblaApi] = useEmblaCarousel({ 
-    loop: true,
-    align: "start",
-    slidesToScroll: 1
-  });
-  
-  // Auto-scroll effect (45 seconds per cycle = scroll every ~11.25 seconds for 4 cards)
-  useEffect(() => {
-    if (!emblaApi) return;
-    
-    const intervalTime = 45000 / 4; // 45 seconds divided by 4 cards = 11.25 seconds per scroll
-    
-    const autoScroll = setInterval(() => {
-      emblaApi.scrollNext();
-    }, intervalTime);
-    
-    return () => clearInterval(autoScroll);
-  }, [emblaApi]);
 
   useEffect(() => {
     const fetchYouTubeData = async () => {
@@ -341,13 +320,26 @@ const CreatorBreakoutSection = () => {
           </div>
         )}
 
-        {/* First Row - Auto-scrolling Carousel */}
+        {/* First Row - Auto-scrolling Marquee */}
         {!loading && !error && cards.length > 0 && (
           <>
-            <div className="overflow-hidden mb-6" ref={emblaRef}>
-              <div className="flex gap-6">
+            <div className="overflow-hidden mb-6">
+              <div 
+                className="flex gap-6 animate-marquee hover:[animation-play-state:paused]"
+                style={{ 
+                  width: 'max-content',
+                  animation: 'marquee 45s linear infinite'
+                }}
+              >
+                {/* First set of cards */}
                 {cards.slice(0, 4).map((card, index) => (
-                  <div key={index} className="flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                  <div key={index} className="w-[357px] flex-shrink-0">
+                    <CreatorCard card={card} />
+                  </div>
+                ))}
+                {/* Duplicate for seamless loop */}
+                {cards.slice(0, 4).map((card, index) => (
+                  <div key={`dup-${index}`} className="w-[357px] flex-shrink-0">
                     <CreatorCard card={card} />
                   </div>
                 ))}
