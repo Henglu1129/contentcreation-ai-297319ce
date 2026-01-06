@@ -28,12 +28,14 @@ const sectionTitles = [
   "From draft to viral—<br />in one click.",
   "Text to voice.<br />Human, fast.",
   "Think it. Ship it.",
+  "Subtitles that speak<br />like locals.",
+  "Think it. Ship it.",
   "Subtitles that speak<br />like locals."
 ];
 
 const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
   const [expandedIndex, setExpandedIndex] = useState(0);
-  const isReversed = blockIndex === 1 || blockIndex === 3;
+  const isReversed = blockIndex === 1 || blockIndex === 3 || blockIndex === 5;
 
   const defaultTools: Tool[] = [
     {
@@ -94,7 +96,25 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
     }
   ];
 
-  const tools = blockIndex === 1 ? section2Tools : blockIndex === 2 ? section3Tools : blockIndex === 3 ? section4Tools : defaultTools;
+  const section5Tools: Tool[] = [
+    {
+      title: "idea2Clip-Vlog and Podcast Generator",
+      description: "AI writes, directs, and produces your 15-second video from just an image and a thought.",
+      link: "https://mulerun.com/agents/ba4e7d42-4044-46cf-8bf8-b6fb752dd297",
+      image: idea2clipVlog
+    }
+  ];
+
+  const section6Tools: Tool[] = [
+    {
+      title: "Subtitle Translate AI Pro",
+      description: "Translate subtitles naturally while preserving tone, timing, and meaning across languages.",
+      link: "https://mulerun.com/agents/b051b2ff-4f2e-423c-8175-bb74d23ce607",
+      image: subtitleTranslatePro
+    }
+  ];
+
+  const tools = blockIndex === 1 ? section2Tools : blockIndex === 2 ? section3Tools : blockIndex === 3 ? section4Tools : blockIndex === 4 ? section5Tools : blockIndex === 5 ? section6Tools : defaultTools;
 
   return (
     <div className="mb-16 md:mb-20 last:mb-0">
@@ -217,7 +237,7 @@ const InspirationSection = () => {
   return (
     <section id="out-of-content-ideas" className="py-12 md:py-20 bg-background">
       <div className="max-w-[1300px] mx-auto px-4 md:px-[60px]">
-        {[0, 1, 2, 3].map((index) => (
+        {[0, 1, 2, 3, 4, 5].map((index) => (
           <InspirationBlock key={index} blockIndex={index} />
         ))}
       </div>
