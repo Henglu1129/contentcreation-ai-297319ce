@@ -5,6 +5,7 @@ import shortsScriptFactory from "@/assets/shorts-script-factory.jpg";
 import illustrateCase from "@/assets/illustrate-case.webp";
 import redditToYoutube from "@/assets/reddit-to-youtube.jpg";
 import contentPilotCase from "@/assets/content-pilot-case.webp";
+import viralShortsAiArchitect from "@/assets/viral-shorts-ai-architect.jpg";
 import showcase1 from "@/assets/showcase-1.webp";
 import podcastCover from "@/assets/podcast-cover.webp";
 import subtitleTranslate from "@/assets/subtitle-translate.jpg";
@@ -51,10 +52,10 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
       image: redditToYoutube
     },
     {
-      title: "New Tool 4",
-      description: "Placeholder description for new tool 4.",
-      link: "#",
-      image: contentPilotCase
+      title: "Viral Shorts AI Architect",
+      description: "Remix hits. Make consistent AI videos. Get T2I + I2V prompts—in one click.",
+      link: "https://mulerun.com/agents/03d920f7-6199-4bd0-9379-5fac38051523",
+      image: viralShortsAiArchitect
     }
   ];
 
