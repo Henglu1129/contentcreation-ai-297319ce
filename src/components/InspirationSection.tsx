@@ -27,7 +27,7 @@ const sectionTitles = [
   "From draft to viral—<br />in one click.",
   "Text to voice.<br />Human, fast.",
   "Think it. Ship it.",
-  "One piece.<br />Every platform."
+  "Subtitles that speak<br />like locals."
 ];
 
 const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
