@@ -15,6 +15,7 @@ import youtubeThumbnail from "@/assets/youtube-thumbnail.webp";
 import idea2clipVlog from "@/assets/idea2clip-vlog.jpg";
 import subtitleTranslatePro from "@/assets/subtitle-translate-pro.jpg";
 import youtubeSocialContent from "@/assets/youtube-social-content.webp";
+import youtubeAwesomeThumbnail from "@/assets/youtube-awesome-thumbnail.jpg";
 
 interface Tool {
   title: string;
@@ -98,10 +99,10 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
 
   const section5Tools: Tool[] = [
     {
-      title: "idea2Clip-Vlog and Podcast Generator",
-      description: "AI writes, directs, and produces your 15-second video from just an image and a thought.",
-      link: "https://mulerun.com/agents/ba4e7d42-4044-46cf-8bf8-b6fb752dd297",
-      image: idea2clipVlog
+      title: "YouTube Awesome Thumbnail",
+      description: "Generate bold, face-focused YouTube thumbnails with integrated titles for high CTR.",
+      link: "https://mulerun.com/agents/01045f00-c02f-46eb-951b-8752bb5a6f12",
+      image: youtubeAwesomeThumbnail
     }
   ];
 
