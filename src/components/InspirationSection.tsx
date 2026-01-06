@@ -40,6 +40,18 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
       description: "Create platform-optimized social posts with hooks, CTAs, and hashtags in your brand voice.",
       link: "https://mulerun.com/agents/4d9b4916-1311-4716-ba98-3bba7d803df3",
       image: contentPilotCase
+    },
+    {
+      title: "New Tool 3",
+      description: "Placeholder description for new tool 3.",
+      link: "#",
+      image: illustrateCase
+    },
+    {
+      title: "New Tool 4",
+      description: "Placeholder description for new tool 4.",
+      link: "#",
+      image: contentPilotCase
     }
   ];
 
