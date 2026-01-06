@@ -3,6 +3,7 @@ import { ChevronsRight } from "lucide-react";
 import viralScriptHumanizer from "@/assets/viral-script-humanizer.jpg";
 import shortsScriptFactory from "@/assets/shorts-script-factory.jpg";
 import illustrateCase from "@/assets/illustrate-case.webp";
+import redditToYoutube from "@/assets/reddit-to-youtube.jpg";
 import contentPilotCase from "@/assets/content-pilot-case.webp";
 import showcase1 from "@/assets/showcase-1.webp";
 import podcastCover from "@/assets/podcast-cover.webp";
@@ -44,10 +45,10 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
       image: shortsScriptFactory
     },
     {
-      title: "New Tool 3",
-      description: "Placeholder description for new tool 3.",
-      link: "#",
-      image: illustrateCase
+      title: "Reddit to YouTube Script - laughing_code",
+      description: "Automatically transform raw Reddit threads into polished scripts, SEO titles, and thumbnail prompts—no editing required.",
+      link: "https://mulerun.com/agents/0cfa5d63-8037-4690-820c-b1d3f2a43d7f",
+      image: redditToYoutube
     },
     {
       title: "New Tool 4",
