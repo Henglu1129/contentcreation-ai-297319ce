@@ -325,11 +325,8 @@ const CreatorBreakoutSection = () => {
           <>
             <div className="overflow-hidden mb-6 group/marquee">
               <div 
-                className="flex gap-6 group-hover/marquee:[animation-play-state:paused]"
-                style={{ 
-                  width: 'max-content',
-                  animation: 'marquee 45s linear infinite'
-                }}
+                className="flex gap-6 animate-marquee"
+                style={{ width: 'max-content' }}
               >
                 {/* First set of cards */}
                 {cards.slice(0, 4).map((card, index) => (
