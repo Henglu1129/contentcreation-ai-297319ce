@@ -13,6 +13,7 @@ import creatorMulerunGroup from "@/assets/creator-mulerun-group.png";
 import creatorWincash from "@/assets/creator-wincash.jpg";
 import creatorBruceDark from "@/assets/creator-bruce-dark.jpg";
 import creatorHiveCorp from "@/assets/creator-hive-corp.jpg";
+import creatorNafay3D from "@/assets/creator-nafay-3d.jpg";
 
 interface CreatorCard {
   thumbnail: string;
@@ -135,7 +136,7 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     rating: 9.2,
     stars: 4.25,
     description: "Discover how AI can streamline your creative process and boost your productivity!",
-    fallbackAvatar: creatorCard6Avatar
+    fallbackAvatar: creatorNafay3D
   }
 };
 
