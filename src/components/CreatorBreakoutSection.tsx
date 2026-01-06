@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Play, Star, Users, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import creatorUmutAktu from "@/assets/creator-umut-aktu.jpg";
@@ -307,10 +307,52 @@ const CreatorBreakoutSection = () => {
           </div>
         )}
 
-        {/* Cards Grid */}
+        {/* First Row - Auto-scrolling */}
         {!loading && !error && cards.length > 0 && (
+          <div className="mb-6 overflow-hidden">
+            <div 
+              className="flex gap-6 animate-scroll-right"
+              style={{
+                width: 'max-content',
+              }}
+            >
+              {/* Original cards + duplicates for seamless loop */}
+              {[...cards.slice(0, 3), ...cards.slice(0, 3), ...cards.slice(0, 3)].map((card, index) => (
+                <div key={index} className="w-[calc(33.333vw-2rem)] min-w-[320px] max-w-[400px] flex-shrink-0">
+                  <CreatorCard card={card} />
+                </div>
+              ))}
+              {/* 4 Placeholder cards */}
+              {[1, 2, 3, 4].map((i) => (
+                <div key={`placeholder-${i}`} className="w-[calc(33.333vw-2rem)] min-w-[320px] max-w-[400px] flex-shrink-0">
+                  <div className="bg-background rounded-lg overflow-hidden shadow-sm border border-border/50">
+                    <div className="aspect-video bg-muted flex items-center justify-center">
+                      <span className="text-muted-foreground text-sm">Placeholder {i}</span>
+                    </div>
+                    <div className="p-4">
+                      <div className="h-5 bg-muted rounded w-3/4 mb-3"></div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className="w-8 h-8 rounded-full bg-muted"></div>
+                        <div>
+                          <div className="h-4 bg-muted rounded w-20 mb-1"></div>
+                          <div className="h-3 bg-muted rounded w-16"></div>
+                        </div>
+                      </div>
+                      <div className="h-4 bg-muted rounded w-1/2 mb-3"></div>
+                      <div className="h-10 bg-muted rounded w-full mb-4"></div>
+                      <div className="h-3 bg-muted rounded w-full"></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Second Row - Static */}
+        {!loading && !error && cards.length > 3 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cards.map((card, index) => (
+            {cards.slice(3).map((card, index) => (
               <CreatorCard key={index} card={card} />
             ))}
           </div>

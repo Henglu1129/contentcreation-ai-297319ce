@@ -8,6 +8,23 @@
 @import "@fontsource/plus-jakarta-sans/700.css";
 
 @tailwind base;
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+.animate-scroll-right:hover {
+  animation-play-state: paused;
+}
 @tailwind components;
 @tailwind utilities;
 
