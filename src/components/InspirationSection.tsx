@@ -13,6 +13,7 @@ import subtitleTranslate from "@/assets/subtitle-translate.jpg";
 import youtubeTitleGenerator from "@/assets/youtube-title-generator.webp";
 import youtubeThumbnail from "@/assets/youtube-thumbnail.webp";
 import idea2clipVlog from "@/assets/idea2clip-vlog.jpg";
+import subtitleTranslatePro from "@/assets/subtitle-translate-pro.jpg";
 import youtubeSocialContent from "@/assets/youtube-social-content.webp";
 
 interface Tool {
@@ -86,10 +87,10 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
   ];
   const section4Tools: Tool[] = [
     {
-      title: "YouTube Video to Social Content",
-      description: "Turn YouTube videos into ready-to-post social content for X, LinkedIn, and Instagram.",
-      link: "https://mulerun.com/agents/9c9b03f0-41e8-4fbb-a99e-ac2f376dc24d",
-      image: youtubeSocialContent
+      title: "Subtitle Translate AI Pro",
+      description: "Translate subtitles naturally while preserving tone, timing, and meaning across languages.",
+      link: "https://mulerun.com/agents/b051b2ff-4f2e-423c-8175-bb74d23ce607",
+      image: subtitleTranslatePro
     }
   ];
 
