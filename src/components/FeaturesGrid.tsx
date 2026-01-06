@@ -39,8 +39,8 @@ const FeaturesGrid = () => {
       layout: "left",
     },
     {
-      title: "Text/Image/Video to Video",
-      description: "How can I turn text, images, or video into polished, cinematic Shorts — with zero editing skills?",
+      title: "Content to Platform-Ready",
+      description: "How can I turn raw content into platform-ready posts — with thumbnails that stop scrollers in their tracks?",
       cards: [
         { title: "Make Clips", description: "Your idea. Hollywood look. Zero effort.", hasButton: true, link: "https://mulerun.com/agents/ba4e7d42-4044-46cf-8bf8-b6fb752dd297", imageIndex: 15 },
       ],
