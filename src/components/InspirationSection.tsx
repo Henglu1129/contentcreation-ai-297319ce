@@ -25,7 +25,7 @@ interface Tool {
 const sectionTitles = [
   "From draft to viral—<br />in one click.",
   "Text to voice.<br />Human, fast.",
-  "Think it.<br />Ship it.",
+  "Think it. Ship it.",
   "One piece.<br />Every platform."
 ];
 
