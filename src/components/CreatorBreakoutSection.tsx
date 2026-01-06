@@ -74,8 +74,8 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     fallbackAvatar: creatorAIMoneyManiac
   },
   "HrKjPC_Racg": {
-    rating: 9.2,
-    stars: 4.25,
+    rating: 9.5,
+    stars: 4.5,
     description: "Real creator tests MuleRun's AI agents on his workflow - see the jaw-dropping automation results that save hours of work!",
     fallbackAvatar: creatorMartinCash
   },
