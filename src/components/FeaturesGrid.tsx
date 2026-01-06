@@ -8,7 +8,7 @@ const FeaturesGrid = () => {
       cards: [
         { title: "Humanize Scripts", description: "Make your AI writing sound like you.", hasButton: true, link: "https://mulerun.com/agents/7a3c7c0c-4778-49bd-9f87-7513c77b40e8", imageIndex: 10 },
         { title: "Generate Shorts", description: "Idea to viral Short — everything baked in.", hasButton: true, link: "https://mulerun.com/agents/4d9b4916-1311-4716-ba98-3bba7d803df3", imageIndex: 11 },
-        { title: "Convert Threads", description: "Mine Reddit gold and turn raw posts into polished YouTube storytelling—fast.", hasButton: true, link: "#", imageIndex: 12 },
+        { title: "Convert Threads", description: "Turn Reddit gold into YouTube stories—fast.", hasButton: true, link: "#", imageIndex: 12 },
         { title: "New Feature 2", description: "Placeholder description for new feature.", hasButton: true, link: "#", imageIndex: 1 },
       ],
       layout: "right",
