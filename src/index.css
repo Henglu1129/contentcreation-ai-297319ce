@@ -19,7 +19,7 @@
 }
 
 .animate-scroll-right {
-  animation: scroll-right 60s linear infinite;
+  animation: scroll-right 45s linear infinite;
 }
 
 .animate-scroll-right:hover {
