@@ -8,6 +8,7 @@ import creatorMartinCash from "@/assets/creator-martin-cash.jpg";
 import creatorCard5 from "@/assets/creator-card5.jpg";
 import creatorCard6Avatar from "@/assets/creator-card6-avatar.jpg";
 import creatorGet365AI from "@/assets/creator-get365ai.jpg";
+import creatorMetaverseGuy from "@/assets/creator-metaverse-guy.jpg";
 
 interface CreatorCard {
   thumbnail: string;
@@ -102,7 +103,7 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     rating: 9.2,
     stars: 4.25,
     description: "Explore the power of AI agents and how they can revolutionize your content creation workflow!",
-    fallbackAvatar: creatorCard6Avatar
+    fallbackAvatar: creatorMetaverseGuy
   }
 };
 
@@ -186,7 +187,7 @@ const CreatorCard = ({ card }: { card: CreatorCard }) => {
       {/* Content */}
       <div className="p-4">
         {/* Title */}
-        <h3 className="font-semibold text-foreground mb-3">{card.title}</h3>
+        <h3 className="font-semibold text-foreground mb-3 line-clamp-2">{card.title}</h3>
 
         {/* Creator info */}
         <div className="flex items-center gap-2 mb-3">
