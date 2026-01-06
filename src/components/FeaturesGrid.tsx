@@ -14,8 +14,8 @@ const FeaturesGrid = () => {
       layout: "right",
     },
     {
-      title: "Creating content takes forever?",
-      description: "How can I auto-generate videos, podcasts, and subtitles — without filming or editing?",
+      title: "Text to Audio",
+      description: "How can I turn plain text into rich, human-sounding audio — instantly and without a mic?",
       cards: [
         { title: "Make Shorts", description: "Auto-cut highlights that grab attention—perfect for social.", hasButton: true, link: "https://mulerun.com/agents/060c2d29-6d0f-41ef-aa16-bd4a000e1ef5", imageIndex: 2 },
         { title: "Generate Podcast", description: "Natural voice, ready to publish in seconds.", hasButton: true, link: "https://mulerun.com/agents/427c5b36-2769-4358-a93d-1323ec7ce1a4", imageIndex: 3 },
