@@ -42,7 +42,7 @@ const FeaturesGrid = () => {
       title: "Content to Platform-Ready",
       description: "How can I turn raw content into scroll-stopping, platform-ready posts?",
       cards: [
-        { title: "Make Clips", description: "Your idea. Hollywood look. Zero effort.", hasButton: true, link: "https://mulerun.com/agents/ba4e7d42-4044-46cf-8bf8-b6fb752dd297", imageIndex: 15 },
+        { title: "Create Thumbnail", description: "High-CTR visuals, optimized and done in one click.", hasButton: true, link: "https://mulerun.com/agents/01045f00-c02f-46eb-951b-8752bb5a6f12", imageIndex: 17 },
       ],
       layout: "right",
     },
