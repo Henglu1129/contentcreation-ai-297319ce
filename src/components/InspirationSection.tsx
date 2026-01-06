@@ -71,13 +71,6 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
       description: "Convert text into multi-speaker podcast audio in 10 languages—no mic needed.",
       link: "https://mulerun.com/agents/427c5b36-2769-4358-a93d-1323ec7ce1a4",
       image: podcastCover
-    },
-    {
-      title: "Subtitle Translate AI Pro",
-      description: "Translate subtitles naturally while preserving tone, timing, and meaning across languages.",
-      link: "https://mulerun.com/agents/b051b2ff-4f2e-423c-8175-bb74d23ce607",
-      image: subtitleTranslate,
-      imagePosition: "object-top"
     }
   ];
 
