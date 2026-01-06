@@ -100,8 +100,8 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     fallbackAvatar: creatorGet365AI
   },
   "dZwjGj5Z9a8": {
-    rating: 9.2,
-    stars: 4.25,
+    rating: 9.5,
+    stars: 4.5,
     description: "Explore the power of AI agents and how they can revolutionize your content creation workflow!",
     fallbackAvatar: creatorMetaverseGuy
   }
