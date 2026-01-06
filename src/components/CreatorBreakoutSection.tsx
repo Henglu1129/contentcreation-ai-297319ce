@@ -7,7 +7,7 @@ import creatorAIMoneyManiac from "@/assets/creator-card3.jpg";
 import creatorMartinCash from "@/assets/creator-martin-cash.jpg";
 import creatorCard5 from "@/assets/creator-card5.jpg";
 import creatorCard6Avatar from "@/assets/creator-card6-avatar.jpg";
-import creatorCard7Avatar from "@/assets/creator-card6-avatar.jpg"; // Placeholder for new video
+import creatorGet365AI from "@/assets/creator-get365ai.jpg";
 
 interface CreatorCard {
   thumbnail: string;
@@ -95,7 +95,7 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     rating: 9.3,
     stars: 4.5,
     description: "Discover how AI automation can transform your content creation process and save you hours of work!",
-    fallbackAvatar: creatorCard7Avatar
+    fallbackAvatar: creatorGet365AI
   }
 };
 
