@@ -17,40 +17,26 @@ const FeaturesGrid = () => {
       title: "Text to Audio",
       description: "How can I turn plain text into rich, human-sounding audio — instantly and without a mic?",
       cards: [
-        { title: "Generate Voiceovers", description: "Turn text into human-sounding voice—no mic needed.", hasButton: true, link: "https://mulerun.com/agents/ab828ed6-bcea-4f0a-8c95-5348cd58c85a", imageIndex: 14 },
+        { title: "Make Shorts", description: "Auto-cut highlights that grab attention—perfect for social.", hasButton: true, link: "https://mulerun.com/agents/060c2d29-6d0f-41ef-aa16-bd4a000e1ef5", imageIndex: 2 },
         { title: "Generate Podcast", description: "Natural voice, ready to publish in seconds.", hasButton: true, link: "https://mulerun.com/agents/427c5b36-2769-4358-a93d-1323ec7ce1a4", imageIndex: 3 },
+        { title: "Translate Subtitles", description: "Accurate sync in 50+ languages—no editing needed.", hasButton: true, link: "https://mulerun.com/agents/b051b2ff-4f2e-423c-8175-bb74d23ce607", imageIndex: 4 },
       ],
       layout: "left",
     },
     {
-      title: "Text/Image/Video to Video",
-      description: "How can I turn text, images, or video into polished, cinematic Shorts — with zero editing skills?",
+      title: "Great content, but no clicks?",
+      description: "How can I get scroll-stopping titles and thumbnails — that actually convert?",
       cards: [
-        { title: "Make Clips", description: "Your idea. Hollywood look. Zero effort.", hasButton: true, link: "https://mulerun.com/agents/ba4e7d42-4044-46cf-8bf8-b6fb752dd297", imageIndex: 15 },
+        { title: "Generate Title", description: "Scroll-stopping hooks tailored to your audience's interests.", hasButton: true, link: "https://mulerun.com/agents/f350d285-6795-4f94-97d9-2c9308b06b93", imageIndex: 5 },
+        { title: "Create Thumbnail", description: "High-CTR visuals, optimized and done in one click.", hasButton: true, link: "https://mulerun.com/agents/01045f00-c02f-46eb-951b-8752bb5a6f12", imageIndex: 6 },
       ],
       layout: "right",
     },
     {
-      title: "Video to Polished Output",
-      description: "How can I turn raw video into global-ready content—with perfect subtitles in any language?",
+      title: "Posting to just one platform?",
+      description: "How can I repurpose one video into posts for all social platforms — instantly?",
       cards: [
-        { title: "Translate Subtitles", description: "Accurate sync in 50+ languages—no editing needed.", hasButton: true, link: "https://mulerun.com/agents/b051b2ff-4f2e-423c-8175-bb74d23ce607", imageIndex: 16 },
-      ],
-      layout: "left",
-    },
-    {
-      title: "Content to Platform-Ready",
-      description: "How can I turn raw content into scroll-stopping, platform-ready posts?",
-      cards: [
-        { title: "Make Clips", description: "Your idea. Hollywood look. Zero effort.", hasButton: true, link: "https://mulerun.com/agents/ba4e7d42-4044-46cf-8bf8-b6fb752dd297", imageIndex: 15 },
-      ],
-      layout: "right",
-    },
-    {
-      title: "Video to Polished Output",
-      description: "How can I turn raw video into global-ready content—with perfect subtitles in any language?",
-      cards: [
-        { title: "Translate Subtitles", description: "Accurate sync in 50+ languages—no editing needed.", hasButton: true, link: "https://mulerun.com/agents/b051b2ff-4f2e-423c-8175-bb74d23ce607", imageIndex: 16 },
+        { title: "Repurpose Content", description: "One piece, everywhere—zero rework.", hasButton: true, link: "https://mulerun.com/agents/9c9b03f0-41e8-4fbb-a99e-ac2f376dc24d", imageIndex: 7 },
       ],
       layout: "left",
     },

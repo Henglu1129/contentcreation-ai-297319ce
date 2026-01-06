@@ -1,7 +1,6 @@
-import { useEffect, useState, useRef } from "react";
-import { Play, Star, Users, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Play, Star, Users, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { Button } from "@/components/ui/button";
 import creatorUmutAktu from "@/assets/creator-umut-aktu.jpg";
 import creatorPlanckMind from "@/assets/creator-planckmind.jpg";
 import creatorAIMoneyManiac from "@/assets/creator-card3.jpg";
@@ -279,19 +278,9 @@ const CreatorBreakoutSection = () => {
     fetchYouTubeData();
   }, []);
 
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const cardWidth = 380; // Card width + gap
-      const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
-      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section className="bg-yellow-light py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-yellow-light py-24 px-6">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="font-anton text-5xl md:text-5xl lg:text-6xl leading-[120%] text-foreground mb-4">
@@ -317,55 +306,16 @@ const CreatorBreakoutSection = () => {
             <p className="text-sm text-muted-foreground">{error}</p>
           </div>
         )}
-      </div>
 
-      {/* Carousel Container - Full width, cards extend beyond viewport */}
-      {!loading && !error && cards.length > 0 && (
-        <div className="relative">
-          {/* Navigation Buttons */}
-          <div className="max-w-7xl mx-auto px-6 mb-4">
-            <div className="flex justify-end gap-2">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={() => scroll('left')}
-                className="rounded-full bg-background/80 hover:bg-background"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={() => scroll('right')}
-                className="rounded-full bg-background/80 hover:bg-background"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </Button>
-            </div>
-          </div>
-
-          {/* Scrollable Cards Container */}
-          <div 
-            ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide px-6 pb-4 snap-x snap-mandatory"
-            style={{ 
-              scrollbarWidth: 'none', 
-              msOverflowStyle: 'none',
-              paddingLeft: 'max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem))',
-              paddingRight: 'max(1.5rem, calc((100vw - 1280px) / 2 + 1.5rem))'
-            }}
-          >
+        {/* Cards Grid */}
+        {!loading && !error && cards.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cards.map((card, index) => (
-              <div 
-                key={index} 
-                className="flex-shrink-0 w-[340px] md:w-[360px] snap-start"
-              >
-                <CreatorCard card={card} />
-              </div>
+              <CreatorCard key={index} card={card} />
             ))}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 };
