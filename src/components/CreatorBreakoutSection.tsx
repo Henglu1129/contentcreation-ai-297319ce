@@ -325,7 +325,7 @@ const CreatorBreakoutSection = () => {
           <>
             <div className="overflow-hidden mb-6">
               <div 
-                className="flex gap-6 animate-marquee hover:[animation-play-state:paused]"
+                className="flex gap-6 hover:[animation-play-state:paused]"
                 style={{ 
                   width: 'max-content',
                   animation: 'marquee 45s linear infinite'
@@ -333,13 +333,13 @@ const CreatorBreakoutSection = () => {
               >
                 {/* First set of cards */}
                 {cards.slice(0, 4).map((card, index) => (
-                  <div key={index} className="w-[357px] flex-shrink-0">
+                  <div key={index} className="w-[calc((100vw-48px)/1)] md:w-[calc((100vw-72px)/2)] lg:w-[calc((1280px-48px)/3)] flex-shrink-0">
                     <CreatorCard card={card} />
                   </div>
                 ))}
                 {/* Duplicate for seamless loop */}
                 {cards.slice(0, 4).map((card, index) => (
-                  <div key={`dup-${index}`} className="w-[357px] flex-shrink-0">
+                  <div key={`dup-${index}`} className="w-[calc((100vw-48px)/1)] md:w-[calc((100vw-72px)/2)] lg:w-[calc((1280px-48px)/3)] flex-shrink-0">
                     <CreatorCard card={card} />
                   </div>
                 ))}
