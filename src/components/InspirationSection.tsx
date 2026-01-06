@@ -7,16 +7,11 @@ import redditToYoutube from "@/assets/reddit-to-youtube.jpg";
 import contentPilotCase from "@/assets/content-pilot-case.webp";
 import viralShortsAiArchitect from "@/assets/viral-shorts-ai-architect.jpg";
 import showcase1 from "@/assets/showcase-1.webp";
-import textToSpeech from "@/assets/text-to-speech.jpg";
 import podcastCover from "@/assets/podcast-cover.webp";
 import subtitleTranslate from "@/assets/subtitle-translate.jpg";
 import youtubeTitleGenerator from "@/assets/youtube-title-generator.webp";
 import youtubeThumbnail from "@/assets/youtube-thumbnail.webp";
-import idea2clipVlog from "@/assets/idea2clip-vlog.jpg";
-import subtitleTranslatePro from "@/assets/subtitle-translate-pro.jpg";
 import youtubeSocialContent from "@/assets/youtube-social-content.webp";
-import youtubeAwesomeThumbnail from "@/assets/youtube-awesome-thumbnail.jpg";
-import hyper3dAiRodin from "@/assets/hyper3d-ai-rodin.jpg";
 
 interface Tool {
   title: string;
@@ -29,15 +24,13 @@ interface Tool {
 const sectionTitles = [
   "From draft to viral—<br />in one click.",
   "Text to voice.<br />Human, fast.",
-  "Think it. Ship it.",
-  "Subtitles that speak<br />like locals.",
-  "Make them click.",
-  "Prompt to 3D.<br />Instantly."
+  "Great content deserves<br />great attention",
+  "One piece.<br />Every platform."
 ];
 
 const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
   const [expandedIndex, setExpandedIndex] = useState(0);
-  const isReversed = blockIndex === 1 || blockIndex === 3 || blockIndex === 5;
+  const isReversed = blockIndex === 1 || blockIndex === 3;
 
   const defaultTools: Tool[] = [
     {
@@ -68,55 +61,50 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
 
   const section2Tools: Tool[] = [
     {
-      title: "Text-to-speech",
-      description: "Lifelike multilingual voiceovers—in premium or cloned voices. One click. Ready to use.",
-      link: "https://mulerun.com/agents/ab828ed6-bcea-4f0a-8c95-5348cd58c85a",
-      image: textToSpeech
+      title: "Auto Short Video Creator",
+      description: "Turn captions into 140-second cinematic shorts with script, voiceover, and visuals.",
+      link: "https://mulerun.com/agents/060c2d29-6d0f-41ef-aa16-bd4a000e1ef5",
+      image: showcase1
     },
     {
       title: "Podcast Generator",
       description: "Convert text into multi-speaker podcast audio in 10 languages—no mic needed.",
       link: "https://mulerun.com/agents/427c5b36-2769-4358-a93d-1323ec7ce1a4",
       image: podcastCover
+    },
+    {
+      title: "Subtitle Translate AI Pro",
+      description: "Translate subtitles naturally while preserving tone, timing, and meaning across languages.",
+      link: "https://mulerun.com/agents/b051b2ff-4f2e-423c-8175-bb74d23ce607",
+      image: subtitleTranslate,
+      imagePosition: "object-top"
     }
   ];
 
   const section3Tools: Tool[] = [
     {
-      title: "idea2Clip-Vlog and Podcast Generator",
-      description: "AI writes, directs, and produces your 15-second video from just an image and a thought.",
-      link: "https://mulerun.com/agents/ba4e7d42-4044-46cf-8bf8-b6fb752dd297",
-      image: idea2clipVlog
-    }
-  ];
-  const section4Tools: Tool[] = [
-    {
-      title: "Subtitle Translate AI Pro",
-      description: "Translate subtitles naturally while preserving tone, timing, and meaning across languages.",
-      link: "https://mulerun.com/agents/b051b2ff-4f2e-423c-8175-bb74d23ce607",
-      image: subtitleTranslatePro
-    }
-  ];
-
-  const section5Tools: Tool[] = [
+      title: "YouTube Title Generator with Emojis",
+      description: "Generate 5 viral, emoji-rich YouTube titles with SEO hooks in seconds.",
+      link: "https://mulerun.com/agents/f350d285-6795-4f94-97d9-2c9308b06b93",
+      image: youtubeTitleGenerator
+    },
     {
       title: "YouTube Awesome Thumbnail",
       description: "Generate bold, face-focused YouTube thumbnails with integrated titles for high CTR.",
       link: "https://mulerun.com/agents/01045f00-c02f-46eb-951b-8752bb5a6f12",
-      image: youtubeAwesomeThumbnail
+      image: youtubeThumbnail
     }
   ];
-
-  const section6Tools: Tool[] = [
+  const section4Tools: Tool[] = [
     {
-      title: "HYPER3D_AI_RODIN",
-      description: "Create high-quality 3D assets from prompts or photos—for games, AR, e-commerce.",
-      link: "https://mulerun.com/agents/1415aefb-3010-4e61-baaa-6ca86dfe0951",
-      image: hyper3dAiRodin
+      title: "YouTube Video to Social Content",
+      description: "Turn YouTube videos into ready-to-post social content for X, LinkedIn, and Instagram.",
+      link: "https://mulerun.com/agents/9c9b03f0-41e8-4fbb-a99e-ac2f376dc24d",
+      image: youtubeSocialContent
     }
   ];
 
-  const tools = blockIndex === 1 ? section2Tools : blockIndex === 2 ? section3Tools : blockIndex === 3 ? section4Tools : blockIndex === 4 ? section5Tools : blockIndex === 5 ? section6Tools : defaultTools;
+  const tools = blockIndex === 1 ? section2Tools : blockIndex === 2 ? section3Tools : blockIndex === 3 ? section4Tools : defaultTools;
 
   return (
     <div className="mb-16 md:mb-20 last:mb-0">
@@ -213,7 +201,7 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
       </div>
       
       {/* Need More Button - only show for last block */}
-      {blockIndex === 5 && (
+      {blockIndex === 3 && (
         <div className="flex justify-center mt-20">
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSepPJzLzbaR9o3CAVr2klu8RSsXOh6omxBz_M1Zu6hZsz77aA/viewform?usp=dialog"
@@ -239,7 +227,7 @@ const InspirationSection = () => {
   return (
     <section id="out-of-content-ideas" className="py-12 md:py-20 bg-background">
       <div className="max-w-[1300px] mx-auto px-4 md:px-[60px]">
-        {[0, 1, 2, 3, 4, 5].map((index) => (
+        {[0, 1, 2, 3].map((index) => (
           <InspirationBlock key={index} blockIndex={index} />
         ))}
       </div>

@@ -36,20 +36,14 @@ interface YouTubeVideoInfo {
   subscriberCount: string;
 }
 
-// Video IDs to fetch - 10 videos for 2 rows of 5
+// Video IDs to fetch
 const VIDEO_IDS = [
-  // Row 1
   "m8brjPr23j4",
   "ygJsgrrUUH0", 
   "RxXvya5v5Lw",
   "HrKjPC_Racg",
   "2FugAplwawk",
-  // Row 2
-  "zc9mdszta3A",
-  "m8brjPr23j4",
-  "ygJsgrrUUH0",
-  "RxXvya5v5Lw",
-  "HrKjPC_Racg"
+  "zc9mdszta3A"
 ];
 
 // Static data for ratings and descriptions (not available from YouTube API)
@@ -313,32 +307,12 @@ const CreatorBreakoutSection = () => {
           </div>
         )}
 
-        {/* Cards Grid - Two rows of 5 cards with side fade effect */}
+        {/* Cards Grid */}
         {!loading && !error && cards.length > 0 && (
-          <div className="relative">
-            {/* Left fade overlay */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-yellow-light to-transparent z-10 pointer-events-none" />
-            {/* Right fade overlay */}
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-yellow-light to-transparent z-10 pointer-events-none" />
-            
-            <div className="overflow-hidden">
-              {/* Row 1 */}
-              <div className="flex gap-6 mb-6" style={{ marginLeft: '-5%', marginRight: '-5%', paddingLeft: '2%', paddingRight: '2%' }}>
-                {cards.slice(0, 5).map((card, index) => (
-                  <div key={`row1-${index}`} className="flex-shrink-0 w-[280px]">
-                    <CreatorCard card={card} />
-                  </div>
-                ))}
-              </div>
-              {/* Row 2 */}
-              <div className="flex gap-6" style={{ marginLeft: '-5%', marginRight: '-5%', paddingLeft: '2%', paddingRight: '2%' }}>
-                {cards.slice(5, 10).map((card, index) => (
-                  <div key={`row2-${index}`} className="flex-shrink-0 w-[280px]">
-                    <CreatorCard card={card} />
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cards.map((card, index) => (
+              <CreatorCard key={index} card={card} />
+            ))}
           </div>
         )}
       </div>
