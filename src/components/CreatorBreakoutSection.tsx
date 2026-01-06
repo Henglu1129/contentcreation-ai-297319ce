@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { Play, Star, Users, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import useEmblaCarousel from "embla-carousel-react";
 import creatorUmutAktu from "@/assets/creator-umut-aktu.jpg";
 import creatorPlanckMind from "@/assets/creator-planckmind.jpg";
 import creatorAIMoneyManiac from "@/assets/creator-card3.jpg";
 import creatorMartinCash from "@/assets/creator-martin-cash.jpg";
 import creatorCard5 from "@/assets/creator-card5.jpg";
 import creatorCard6Avatar from "@/assets/creator-card6-avatar.jpg";
+import creatorCard7Avatar from "@/assets/creator-card6-avatar.jpg"; // Placeholder for new video
 
 interface CreatorCard {
   thumbnail: string;
@@ -36,15 +38,21 @@ interface YouTubeVideoInfo {
   subscriberCount: string;
 }
 
-// Video IDs to fetch
-const VIDEO_IDS = [
+// Video IDs to fetch - first 4 are for carousel (first row), last 3 for grid (second row)
+const CAROUSEL_VIDEO_IDS = [
   "m8brjPr23j4",
   "ygJsgrrUUH0", 
   "RxXvya5v5Lw",
+  "utU3OsLYWnM"  // New video
+];
+
+const GRID_VIDEO_IDS = [
   "HrKjPC_Racg",
   "2FugAplwawk",
   "zc9mdszta3A"
 ];
+
+const VIDEO_IDS = [...CAROUSEL_VIDEO_IDS, ...GRID_VIDEO_IDS];
 
 // Static data for ratings and descriptions (not available from YouTube API)
 const staticData: Record<string, { rating: number; stars: number; description: string; fallbackAvatar: string }> = {
@@ -83,6 +91,12 @@ const staticData: Record<string, { rating: number; stars: number; description: s
     stars: 4.25,
     description: "Learn how to automate your content creation workflow with MuleRun AI agents - save hours of work every day!",
     fallbackAvatar: creatorCard6Avatar
+  },
+  "utU3OsLYWnM": {
+    rating: 9.3,
+    stars: 4.5,
+    description: "Discover how AI automation can transform your content creation process and save you hours of work!",
+    fallbackAvatar: creatorCard7Avatar
   }
 };
 
@@ -216,6 +230,26 @@ const CreatorBreakoutSection = () => {
   const [cards, setCards] = useState<CreatorCard[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  
+  // Embla carousel setup for first row
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    align: "start",
+    slidesToScroll: 1
+  });
+  
+  // Auto-scroll effect (45 seconds per cycle = scroll every ~11.25 seconds for 4 cards)
+  useEffect(() => {
+    if (!emblaApi) return;
+    
+    const intervalTime = 45000 / 4; // 45 seconds divided by 4 cards = 11.25 seconds per scroll
+    
+    const autoScroll = setInterval(() => {
+      emblaApi.scrollNext();
+    }, intervalTime);
+    
+    return () => clearInterval(autoScroll);
+  }, [emblaApi]);
 
   useEffect(() => {
     const fetchYouTubeData = async () => {
@@ -307,13 +341,26 @@ const CreatorBreakoutSection = () => {
           </div>
         )}
 
-        {/* Cards Grid */}
+        {/* First Row - Auto-scrolling Carousel */}
         {!loading && !error && cards.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cards.map((card, index) => (
-              <CreatorCard key={index} card={card} />
-            ))}
-          </div>
+          <>
+            <div className="overflow-hidden mb-6" ref={emblaRef}>
+              <div className="flex gap-6">
+                {cards.slice(0, 4).map((card, index) => (
+                  <div key={index} className="flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                    <CreatorCard card={card} />
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Second Row - Static Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {cards.slice(4).map((card, index) => (
+                <CreatorCard key={index + 4} card={card} />
+              ))}
+            </div>
+          </>
         )}
       </div>
     </section>
