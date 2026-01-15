@@ -10,6 +10,7 @@ const FeaturesGrid = () => {
         { title: "Generate Shorts", description: "Idea to viral Short — everything baked in.", hasButton: true, link: "https://mulerun.com/agents/2d7a8a1b-4257-4cab-93e5-d790fe1ff807", imageIndex: 11 },
         { title: "Convert Threads", description: "Turn Reddit gold into YouTube stories—fast.", hasButton: true, link: "https://mulerun.com/agents/0cfa5d63-8037-4690-820c-b1d3f2a43d7f", imageIndex: 12 },
         { title: "Remix Shorts", description: "Remake the hit formula—fresh content.", hasButton: true, link: "https://mulerun.com/agents/03d920f7-6199-4bd0-9379-5fac38051523", imageIndex: 13 },
+        { title: "Placeholder Tool", description: "Placeholder description for new card.", hasButton: true, link: "#", imageIndex: 0 },
       ],
       layout: "right",
     },
@@ -110,6 +111,20 @@ const FeaturesGrid = () => {
                   {section.cards.slice(2, 4).map((card, cardIndex) => (
                     <FeatureCard 
                       key={cardIndex + 2} 
+                      title={card.title}
+                      description={card.description}
+                      hasButton={card.hasButton}
+                      link={card.link}
+                      imageIndex={card.imageIndex}
+                    />
+                  ))}
+                </div>
+              )}
+              {section.cards.length > 4 && (
+                <div className="flex flex-col md:flex-row gap-4">
+                  {section.cards.slice(4, 6).map((card, cardIndex) => (
+                    <FeatureCard 
+                      key={cardIndex + 4} 
                       title={card.title}
                       description={card.description}
                       hasButton={card.hasButton}
