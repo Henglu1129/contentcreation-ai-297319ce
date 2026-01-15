@@ -10,7 +10,7 @@ const FeaturesGrid = () => {
         { title: "Generate Shorts", description: "Idea to viral Short — everything baked in.", hasButton: true, link: "https://mulerun.com/agents/2d7a8a1b-4257-4cab-93e5-d790fe1ff807", imageIndex: 11 },
         { title: "Convert Threads", description: "Turn Reddit gold into YouTube stories—fast.", hasButton: true, link: "https://mulerun.com/agents/0cfa5d63-8037-4690-820c-b1d3f2a43d7f", imageIndex: 12 },
         { title: "Remix Shorts", description: "Remake the hit formula—fresh content.", hasButton: true, link: "https://mulerun.com/agents/03d920f7-6199-4bd0-9379-5fac38051523", imageIndex: 13 },
-        { title: "Trend Insights", description: "Real-time YouTube trends for smarter content decisions.", hasButton: true, link: "#", imageIndex: 19 },
+        { title: "Trend Insights", description: "Real-time YouTube trends for smarter content decisions.", hasButton: true, link: "https://mulerun.com/agents/cc89a662-d25e-4eb2-b40e-e3a27bb181b2", imageIndex: 19 },
       ],
       layout: "right",
     },
