@@ -7,6 +7,7 @@ import redditToYoutube from "@/assets/reddit-to-youtube.jpg";
 import contentPilotCase from "@/assets/content-pilot-case.webp";
 import viralShortsAiArchitect from "@/assets/viral-shorts-ai-architect.jpg";
 import trendInsights from "@/assets/card-trend-insights.png";
+import animeCreator from "@/assets/card-anime-creator.png";
 import showcase1 from "@/assets/showcase-1.webp";
 import textToSpeech from "@/assets/text-to-speech.jpg";
 import podcastCover from "@/assets/podcast-cover.webp";
@@ -99,7 +100,7 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
       title: "Anime Creator",
       description: "Instantly create anime comics and videos from simple story descriptions.",
       link: "https://mulerun.com/agents/d47bf37a-39b4-4ab5-8324-269e0a133ef2",
-      image: viralShortsAiArchitect
+      image: animeCreator
     }
   ];
   const section4Tools: Tool[] = [
