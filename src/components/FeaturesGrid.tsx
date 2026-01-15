@@ -28,6 +28,7 @@ const FeaturesGrid = () => {
       description: "How can I turn text, images, or video into polished, cinematic Shorts — with zero editing skills?",
       cards: [
         { title: "Make Clips", description: "Your idea. Hollywood look. Zero effort.", hasButton: true, link: "https://mulerun.com/agents/ba4e7d42-4044-46cf-8bf8-b6fb752dd297", imageIndex: 15 },
+        { title: "Placeholder Tool", description: "Placeholder description for new card.", hasButton: true, link: "#", imageIndex: 0 },
       ],
       layout: "right",
     },
