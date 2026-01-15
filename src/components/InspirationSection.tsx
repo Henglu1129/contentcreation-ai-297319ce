@@ -94,6 +94,12 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
       description: "AI writes, directs, and produces your 15-second video from just an image and a thought.",
       link: "https://mulerun.com/agents/ba4e7d42-4044-46cf-8bf8-b6fb752dd297",
       image: idea2clipVlog
+    },
+    {
+      title: "Anime Creator",
+      description: "Instantly create anime comics and videos from simple story descriptions.",
+      link: "https://mulerun.com/agents/d47bf37a-39b4-4ab5-8324-269e0a133ef2",
+      image: viralShortsAiArchitect
     }
   ];
   const section4Tools: Tool[] = [
