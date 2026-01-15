@@ -6,6 +6,7 @@ import illustrateCase from "@/assets/illustrate-case.webp";
 import redditToYoutube from "@/assets/reddit-to-youtube.jpg";
 import contentPilotCase from "@/assets/content-pilot-case.webp";
 import viralShortsAiArchitect from "@/assets/viral-shorts-ai-architect.jpg";
+import trendInsights from "@/assets/card-trend-insights.png";
 import showcase1 from "@/assets/showcase-1.webp";
 import textToSpeech from "@/assets/text-to-speech.jpg";
 import podcastCover from "@/assets/podcast-cover.webp";
@@ -63,6 +64,12 @@ const InspirationBlock = ({ blockIndex }: { blockIndex: number }) => {
       description: "Remix hits. Make consistent AI videos. Get T2I + I2V prompts—in one click.",
       link: "https://mulerun.com/agents/03d920f7-6199-4bd0-9379-5fac38051523",
       image: viralShortsAiArchitect
+    },
+    {
+      title: "Top-video YouTube Tracking",
+      description: "Analyzes latest YouTube trends to generate timely, data-backed video title and content ideas.",
+      link: "https://mulerun.com/agents/cc89a662-d25e-4eb2-b40e-e3a27bb181b2",
+      image: trendInsights
     }
   ];
 
